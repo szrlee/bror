@@ -26,10 +26,11 @@ import os
 
 model_params = (200, 200)
 
-default_policy_root_dir = os.path.join(
-    os.getenv('HOME', '/'),
-    'tmp/offlinerl/policies')
+#default_policy_root_dir = os.path.join(
+#    os.getenv('HOME', '/'),
+#    'tmp/offlinerl/policies')
 
+default_policy_root_dir = '/data1/yrli/tmp/offlinerl/policies'
 
 def get_data_config(env_name, policy_root_dir=None):
   """Gets data config."""
@@ -44,8 +45,8 @@ def get_data_config(env_name, policy_root_dir=None):
   p1_pure = ['load', ckpt_file, ['none',], model_params]
   p1_eps = ['load', ckpt_file, ['eps', 0.3], model_params]
   data_config = [
-      ['randwalk', randwalk, 2],
+     # ['randwalk', randwalk, 2],
       ['p1_pure', p1_pure, 4],
-      ['p1_eps', p1_eps, 4],
+     # ['p1_eps', p1_eps, 4],
   ]
   return data_config

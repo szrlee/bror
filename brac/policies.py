@@ -51,14 +51,21 @@ class RandomSoftPolicy(tf.Module):
   @tf.function
   def collect(self, observation, n_samples, state=()):
     batch_size = observation.shape[0]
-    actions, log_pi_as = self._a_network.sample_n(observation, n_samples)[1:2]
-    print(actions.shape)
-    print(observation.shape)
-    input()
-    # a_indices = tf.argmax(qvals, axis=0)
+    actions, log_pi_as = self._a_network.sample_n(observation, n_samples)[1:]
+    #print(actions.shape)
+    #print(observation.shape)
+    ZEROS_matrix = tf.zeros([n_samples, batch_size], tf.int64)
+    #print(ZEROS_matrix)
+    a_indices = tf.argmax(ZEROS_matrix, axis=0)
+    #print(a_indices)
     gather_indices = tf.stack(
         [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
     action = tf.gather_nd(actions, gather_indices)
+    #print(action)
+    actions = tf.reshape(actions, [batch_size, 10, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    #print(actions)
+    #print(log_pi_as)
     # log_pi_a = tf.gather_nd(log_pi_as, gather_indices)
     return action, state, actions, log_pi_as
 
@@ -79,11 +86,16 @@ class MaxQSoftPolicy(tf.Module):
     states_ = tf.tile(observation[None], (self._n, 1, 1))
     states_ = tf.reshape(states_, [self._n * batch_size, -1])
     qvals = self._q_network(states_, actions_)
+    print(qvals)
     qvals = tf.reshape(qvals, [self._n, batch_size])
+    print(qvals)
     a_indices = tf.argmax(qvals, axis=0)
+    print(a_indices)
     gather_indices = tf.stack(
         [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
+    print(gather_indices)
     action = tf.gather_nd(actions, gather_indices)
+    print(action)
     return action, state
 
 

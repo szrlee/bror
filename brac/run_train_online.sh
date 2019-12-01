@@ -21,4 +21,5 @@ python train_online.py \
   --total_train_steps=500000 \
   --gin_bindings="train_eval_online.model_params=(((300, 300), (200, 200),), 2)" \
   --gin_bindings="train_eval_online.batch_size=256" \
-  --gin_bindings="train_eval_online.optimizers=(('adam', 0.0005),)"
+  --gin_bindings="train_eval_online.optimizers=(('adam', 0.0005),)" \
+  --gin_bindings="train_eval_online.eval_target_n=4"

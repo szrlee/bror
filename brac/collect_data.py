@@ -31,6 +31,11 @@ import gin
 import numpy as np
 import tensorflow as tf
 
+# suppress annoying warning
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+
 from behavior_regularized_offline_rl.brac import dataset
 from behavior_regularized_offline_rl.brac import policy_loader
 from behavior_regularized_offline_rl.brac import train_eval_utils

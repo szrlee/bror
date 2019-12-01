@@ -73,6 +73,7 @@ class Dataset(tf.Module):
     obs_shape = list(observation_spec.shape)
     obs_type = observation_spec.dtype
     action_shape = list(action_spec.shape)
+    print("action_shape: {}".format(action_shape))
     action_type = action_spec.dtype
     self._s1 = self._zeros([size] + obs_shape, obs_type)
     self._s2 = self._zeros([size] + obs_shape, obs_type)
@@ -80,12 +81,11 @@ class Dataset(tf.Module):
     self._a2 = self._zeros([size] + action_shape, action_type)
     self._discount = self._zeros([size], tf.float32)
     self._reward = self._zeros([size], tf.float32)
-    print('a1.shape'+self._a1.shape)
     # TODO: change shape (size * n_samles_of_actions)
-    self._a1s = self._zeros([size] + action_shape, action_type)
-    self._log_pi_a1s = self._zeros([size], tf.float32)
-    self._a2s = self._zeros([size] + action_shape, action_type)
-    self._log_pi_a2s = self._zeros([size], tf.float32)
+    self._a1s = self._zeros([size, 10] + action_shape, action_type)
+    self._log_pi_a1s = self._zeros([size, 10], tf.float32)
+    self._a2s = self._zeros([size, 10] + action_shape, action_type)
+    self._log_pi_a2s = self._zeros([size, 10], tf.float32)
 
     self._data = Transition(
         s1=self._s1, s2=self._s2, a1=self._a1, a2=self._a2,

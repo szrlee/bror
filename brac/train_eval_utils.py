@@ -84,6 +84,8 @@ class DataCollector(object):
         self._policy = policy
         self._data = data
         self._saved_action = None
+        self._saved_internal_actions = None
+        self._saved_internal_log_probs_actions = None
 
     def collect_transition(self):
         """Collect single transition from environment."""
@@ -91,9 +93,13 @@ class DataCollector(object):
         if self._saved_action is None:
             self._saved_action, _, internal_actions, internal_log_probs_actions = self._policy.collect(time_step.observation, n_samples=10)
         action = self._saved_action
+        internal_actions = self._saved_internal_actions
+        internal_log_probs_actions = self._saved_internal_log_probs_actions
         next_time_step = self._tf_env.step(action)
         next_action, _, next_internal_actions, next_internal_log_probs_actions = self._policy.collect(next_time_step.observation, n_samples=10)
         self._saved_action = next_action
+        self._saved_internal_actions = next_internal_actions
+        self._saved_internal_log_probs_actions = next_internal_log_probs_actions
         if not time_step.is_last()[0].numpy():
             transition = get_transition(time_step, next_time_step,
                                         action, next_action,
