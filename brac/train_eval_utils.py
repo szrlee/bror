@@ -28,71 +28,78 @@ from behavior_regularized_offline_rl.brac import dataset
 
 
 def eval_policy_episodes(env, policy, n_episodes):
-  """Evaluates policy performance."""
-  results = []
-  for _ in range(n_episodes):
-    time_step = env.reset()
-    total_rewards = 0.0
-    while not time_step.is_last().numpy()[0]:
-      action = policy(time_step.observation)[0]
-      time_step = env.step(action)
-      total_rewards += time_step.reward
-    results.append(total_rewards)
-  results = np.array(results)
-  return float(np.mean(results)), float(np.std(results))
+    """Evaluates policy performance."""
+    results = []
+    for _ in range(n_episodes):
+        time_step = env.reset()
+        total_rewards = 0.0
+        while not time_step.is_last().numpy()[0]:
+            action = policy(time_step.observation)[0]
+            time_step = env.step(action)
+            total_rewards += time_step.reward
+        results.append(total_rewards)
+    results = np.array(results)
+    return float(np.mean(results)), float(np.std(results))
 
 
 def eval_policies(env, policies, n_episodes):
-  results_episode_return = []
-  infos = collections.OrderedDict()
-  for name, policy in policies.items():
-    mean, _ = eval_policy_episodes(env, policy, n_episodes)
-    results_episode_return.append(mean)
-    infos[name] = collections.OrderedDict()
-    infos[name]['episode_mean'] = mean
-  results = results_episode_return
-  return results, infos
+    results_episode_return = []
+    infos = collections.OrderedDict()
+    for name, policy in policies.items():
+        mean, _ = eval_policy_episodes(env, policy, n_episodes)
+        results_episode_return.append(mean)
+        infos[name] = collections.OrderedDict()
+        infos[name]['episode_mean'] = mean
+    results = results_episode_return
+    return results, infos
 
 
 # TODO(wuyifan): external version for loading environments
 def env_factory(env_name):
-  py_env = suite_mujoco.load(env_name)
-  tf_env = tf_py_environment.TFPyEnvironment(py_env)
-  return tf_env
+    py_env = suite_mujoco.load(env_name)
+    tf_env = tf_py_environment.TFPyEnvironment(py_env)
+    return tf_env
 
 
-def get_transition(time_step, next_time_step, action, next_action):
-  return dataset.Transition(
-      s1=time_step.observation,
-      s2=next_time_step.observation,
-      a1=action,
-      a2=next_action,
-      reward=next_time_step.reward,
-      discount=next_time_step.discount)
+def get_transition(time_step, next_time_step, action, next_action, internal_actions, internal_log_probs_actions, next_internal_actions, next_internal_log_probs_actions):
+    return dataset.Transition(
+        s1=time_step.observation,
+        s2=next_time_step.observation,
+        a1=action,
+        a2=next_action,
+        reward=next_time_step.reward,
+        discount=next_time_step.discount,
+        a1s=internal_actions,
+        log_pi_a1s=internal_log_probs_actions,
+        a2s=next_internal_actions,
+        log_pi_a2s=next_internal_log_probs_actions
+        )
 
 
 class DataCollector(object):
-  """Class for collecting sequence of environment experience."""
+    """Class for collecting sequence of environment experience."""
 
-  def __init__(self, tf_env, policy, data):
-    self._tf_env = tf_env
-    self._policy = policy
-    self._data = data
-    self._saved_action = None
+    def __init__(self, tf_env, policy, data):
+        self._tf_env = tf_env
+        self._policy = policy
+        self._data = data
+        self._saved_action = None
 
-  def collect_transition(self):
-    """Collect single transition from environment."""
-    time_step = self._tf_env.current_time_step()
-    if self._saved_action is None:
-      self._saved_action = self._policy(time_step.observation)[0]
-    action = self._saved_action
-    next_time_step = self._tf_env.step(action)
-    next_action = self._policy(next_time_step.observation)[0]
-    self._saved_action = next_action
-    if not time_step.is_last()[0].numpy():
-      transition = get_transition(time_step, next_time_step,
-                                  action, next_action)
-      self._data.add_transitions(transition)
-      return 1
-    else:
-      return 0
+    def collect_transition(self):
+        """Collect single transition from environment."""
+        time_step = self._tf_env.current_time_step()
+        if self._saved_action is None:
+            self._saved_action, _, internal_actions, internal_log_probs_actions = self._policy.collect(time_step.observation, n_samples=10)
+        action = self._saved_action
+        next_time_step = self._tf_env.step(action)
+        next_action, _, next_internal_actions, next_internal_log_probs_actions = self._policy.collect(next_time_step.observation, n_samples=10)
+        self._saved_action = next_action
+        if not time_step.is_last()[0].numpy():
+            transition = get_transition(time_step, next_time_step,
+                                        action, next_action,
+                                        internal_actions, internal_log_probs_actions,
+                                        next_internal_actions, next_internal_log_probs_actions)
+            self._data.add_transitions(transition)
+            return 1
+        else:
+            return 0

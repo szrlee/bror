@@ -151,7 +151,7 @@ def train_eval_online(
       eval_result, eval_infos = train_eval_utils.eval_policies(
           tf_env_test, agent.test_policies, n_eval_episodes)
       eval_results.append([step] + eval_result)
-      # Cecide whether to save a partially trained policy based on current model
+      # Decide whether to save a partially trained policy based on current model
       # performance.
       if (eval_target is not None and len(eval_results) >= eval_target_n
           and not target_partial_policy_saved):

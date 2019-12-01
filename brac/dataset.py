@@ -25,7 +25,7 @@ import tensorflow as tf
 
 
 Transition = collections.namedtuple(
-    'Transition', 's1, s2, a1, a2, discount, reward')
+    'Transition', 's1, s2, a1, a2, discount, reward, a1s, log_pi_a1s, a2s, log_pi_a2s')
 
 
 class DatasetView(object):
@@ -80,9 +80,18 @@ class Dataset(tf.Module):
     self._a2 = self._zeros([size] + action_shape, action_type)
     self._discount = self._zeros([size], tf.float32)
     self._reward = self._zeros([size], tf.float32)
+    print('a1.shape'+self._a1.shape)
+    # TODO: change shape (size * n_samles_of_actions)
+    self._a1s = self._zeros([size] + action_shape, action_type)
+    self._log_pi_a1s = self._zeros([size], tf.float32)
+    self._a2s = self._zeros([size] + action_shape, action_type)
+    self._log_pi_a2s = self._zeros([size], tf.float32)
+
     self._data = Transition(
         s1=self._s1, s2=self._s2, a1=self._a1, a2=self._a2,
-        discount=self._discount, reward=self._reward)
+        discount=self._discount, reward=self._reward,
+        a1s = self._a1s, log_pi_a1s = self._log_pi_a1s,
+        a2s = self._a2s, log_pi_a2s = self._log_pi_a2s)
     self._current_size = tf.Variable(0)
     self._current_idx = tf.Variable(0)
     self._capacity = tf.Variable(self._size)

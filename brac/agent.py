@@ -110,6 +110,7 @@ class Agent(object):
     batch_indices = np.random.choice(self._train_data.size, self._batch_size)
     batch_ = self._train_data.get_batch(batch_indices)
     transition_batch = batch_
+    # TODO: change batch structure
     batch = dict(
         s1=transition_batch.s1,
         s2=transition_batch.s2,

@@ -48,6 +48,19 @@ class RandomSoftPolicy(tf.Module):
     action = self._a_network(observation)[1]
     return action, state
 
+  @tf.function
+  def collect(self, observation, n_samples, state=()):
+    batch_size = observation.shape[0]
+    actions, log_pi_as = self._a_network.sample_n(observation, n_samples)[1:2]
+    print(actions.shape)
+    print(observation.shape)
+    input()
+    # a_indices = tf.argmax(qvals, axis=0)
+    gather_indices = tf.stack(
+        [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
+    action = tf.gather_nd(actions, gather_indices)
+    # log_pi_a = tf.gather_nd(log_pi_as, gather_indices)
+    return action, state, actions, log_pi_as
 
 class MaxQSoftPolicy(tf.Module):
   """Samples a few actions from policy, returns the one with highest Q-value."""
