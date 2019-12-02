@@ -88,7 +88,7 @@ class FDivergence(Divergence):
         s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
     IS_ratio = tf.exp(abn_logp - abn_logb)
     #tf.print("IS_ratio", IS_ratio)
-    IS_ratio = tf.maximum(1e-16, tf.minimum(1.0, IS_ratio))
+    IS_ratio = tf.minimum(1.0, IS_ratio)
     #tf.print("abn_logp", abn_logp)
     #tf.print("abn_logp - abn_logb", abn_logp - abn_logb)
     return tf.reduce_mean(tf.multiply(IS_ratio, abn_logp - abn_logb), axis=0)

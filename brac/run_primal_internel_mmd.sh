@@ -14,10 +14,10 @@
 
 #!/bin/bash
 TRAIN_ALPHA=True
-ALPHA=0.1
+ALPHA=3
 PLR=3e-04
 VALUE_PENALTY=True
-DIVERGENCE=kl
+DIVERGENCE=mmd
 ENV=HalfCheetah-v2
 DATA=pure_two_policies1
 DATA_SUB_DIR=1
