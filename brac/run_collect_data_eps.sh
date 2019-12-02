@@ -16,12 +16,12 @@
 # use DATA_NAME from one of {pure, eps1, eps3, gaussian1, gaussian3}
 # to use already saved policies on CNS.
 # use DATA_NAME=example to use locally saved policies
-DATA_NAME=eps_two_policies
+DATA_NAME=eps_two_policies1
 python collect_data.py \
   --root_dir='/data1/yrli/tmp/offlinerl/data' \
   --alsologtostderr \
-  --sub_dir=0 \
-  --env_name=Ant-v2 \
+  --sub_dir=1 \
+  --env_name=Walker2d-v2 \
   --data_name=$DATA_NAME \
   --config_file=dcfg_$DATA_NAME \
   --n_samples=1000000 \

@@ -1,0 +1,110 @@
+I1202 16:17:35.068276 139631277811520 policy_loader.py:78] Loading policy from /data1/yrli/tmp/offlinerl/policies/Walker2d-v2/sac/1/agent_partial_target...
+I1202 16:17:35.073660 139631277811520 collect_data.py:133] Testing policy p1_ours_pure...
+I1202 16:17:49.382296 139631277811520 collect_data.py:137] Return mean 1632, std 938.9.
+I1202 16:17:49.382470 139631277811520 collect_data.py:138] Collecting data from policy p1_ours_pure...
+I1202 16:18:12.078498 139631277811520 collect_data.py:98] (10000/500000) steps collected at 440.6 steps/s.
+I1202 16:18:33.030025 139631277811520 collect_data.py:98] (20000/500000) steps collected at 477.3 steps/s.
+I1202 16:18:54.963306 139631277811520 collect_data.py:98] (30000/500000) steps collected at 455.9 steps/s.
+I1202 16:19:16.749285 139631277811520 collect_data.py:98] (40000/500000) steps collected at 459 steps/s.
+I1202 16:19:39.675982 139631277811520 collect_data.py:98] (50000/500000) steps collected at 436.2 steps/s.
+I1202 16:20:02.787974 139631277811520 collect_data.py:98] (60000/500000) steps collected at 432.7 steps/s.
+I1202 16:20:24.982214 139631277811520 collect_data.py:98] (70000/500000) steps collected at 450.6 steps/s.
+I1202 16:20:47.960682 139631277811520 collect_data.py:98] (80000/500000) steps collected at 435.2 steps/s.
+I1202 16:21:08.805994 139631277811520 collect_data.py:98] (90000/500000) steps collected at 479.7 steps/s.
+I1202 16:21:32.502540 139631277811520 collect_data.py:98] (100000/500000) steps collected at 422 steps/s.
+I1202 16:21:55.723519 139631277811520 collect_data.py:98] (110000/500000) steps collected at 430.6 steps/s.
+I1202 16:22:18.618044 139631277811520 collect_data.py:98] (120000/500000) steps collected at 436.8 steps/s.
+I1202 16:22:42.827943 139631277811520 collect_data.py:98] (130000/500000) steps collected at 413.1 steps/s.
+I1202 16:23:05.400840 139631277811520 collect_data.py:98] (140000/500000) steps collected at 443 steps/s.
+I1202 16:23:28.941747 139631277811520 collect_data.py:98] (150000/500000) steps collected at 424.8 steps/s.
+I1202 16:23:52.679114 139631277811520 collect_data.py:98] (160000/500000) steps collected at 421.3 steps/s.
+I1202 16:24:17.400744 139631277811520 collect_data.py:98] (170000/500000) steps collected at 404.5 steps/s.
+I1202 16:24:40.541166 139631277811520 collect_data.py:98] (180000/500000) steps collected at 432.1 steps/s.
+I1202 16:25:04.226547 139631277811520 collect_data.py:98] (190000/500000) steps collected at 422.2 steps/s.
+I1202 16:25:28.318504 139631277811520 collect_data.py:98] (200000/500000) steps collected at 415.1 steps/s.
+I1202 16:25:54.209320 139631277811520 collect_data.py:98] (210000/500000) steps collected at 386.2 steps/s.
+I1202 16:26:18.039455 139631277811520 collect_data.py:98] (220000/500000) steps collected at 419.6 steps/s.
+I1202 16:26:41.788653 139631277811520 collect_data.py:98] (230000/500000) steps collected at 421.1 steps/s.
+I1202 16:27:05.754125 139631277811520 collect_data.py:98] (240000/500000) steps collected at 417.3 steps/s.
+I1202 16:27:29.677109 139631277811520 collect_data.py:98] (250000/500000) steps collected at 418 steps/s.
+I1202 16:27:55.681552 139631277811520 collect_data.py:98] (260000/500000) steps collected at 384.5 steps/s.
+I1202 16:28:19.376866 139631277811520 collect_data.py:98] (270000/500000) steps collected at 422 steps/s.
+I1202 16:28:43.565819 139631277811520 collect_data.py:98] (280000/500000) steps collected at 413.4 steps/s.
+I1202 16:29:07.697740 139631277811520 collect_data.py:98] (290000/500000) steps collected at 414.4 steps/s.
+I1202 16:29:32.389832 139631277811520 collect_data.py:98] (300000/500000) steps collected at 405 steps/s.
+I1202 16:29:56.926700 139631277811520 collect_data.py:98] (310000/500000) steps collected at 407.6 steps/s.
+I1202 16:30:21.361989 139631277811520 collect_data.py:98] (320000/500000) steps collected at 409.2 steps/s.
+I1202 16:30:48.399527 139631277811520 collect_data.py:98] (330000/500000) steps collected at 369.9 steps/s.
+I1202 16:31:13.205551 139631277811520 collect_data.py:98] (340000/500000) steps collected at 403.1 steps/s.
+I1202 16:31:38.174795 139631277811520 collect_data.py:98] (350000/500000) steps collected at 400.5 steps/s.
+I1202 16:32:03.080783 139631277811520 collect_data.py:98] (360000/500000) steps collected at 401.5 steps/s.
+I1202 16:32:28.077310 139631277811520 collect_data.py:98] (370000/500000) steps collected at 400.1 steps/s.
+I1202 16:32:52.593610 139631277811520 collect_data.py:98] (380000/500000) steps collected at 407.9 steps/s.
+I1202 16:33:17.405977 139631277811520 collect_data.py:98] (390000/500000) steps collected at 403 steps/s.
+I1202 16:33:42.319628 139631277811520 collect_data.py:98] (400000/500000) steps collected at 401.4 steps/s.
+I1202 16:34:09.967835 139631277811520 collect_data.py:98] (410000/500000) steps collected at 361.7 steps/s.
+I1202 16:34:34.647774 139631277811520 collect_data.py:98] (420000/500000) steps collected at 405.2 steps/s.
+I1202 16:34:59.499264 139631277811520 collect_data.py:98] (430000/500000) steps collected at 402.4 steps/s.
+I1202 16:35:24.339279 139631277811520 collect_data.py:98] (440000/500000) steps collected at 402.6 steps/s.
+I1202 16:35:49.094981 139631277811520 collect_data.py:98] (450000/500000) steps collected at 403.9 steps/s.
+I1202 16:36:13.904530 139631277811520 collect_data.py:98] (460000/500000) steps collected at 403.1 steps/s.
+I1202 16:36:38.836667 139631277811520 collect_data.py:98] (470000/500000) steps collected at 401.1 steps/s.
+I1202 16:37:04.108247 139631277811520 collect_data.py:98] (480000/500000) steps collected at 395.7 steps/s.
+I1202 16:37:29.502337 139631277811520 collect_data.py:98] (490000/500000) steps collected at 393.8 steps/s.
+I1202 16:37:55.157186 139631277811520 collect_data.py:98] (500000/500000) steps collected at 389.8 steps/s.
+I1202 16:37:55.160437 139631277811520 policy_loader.py:78] Loading policy from /data1/yrli/behavior_regularized_offline_rl/brac/configs/../../trained_policies/Walker2d-v2/agent_partial_target...
+I1202 16:37:55.178591 139631277811520 collect_data.py:133] Testing policy p1_ours_pure...
+I1202 16:38:13.319985 139631277811520 collect_data.py:137] Return mean 1297, std 617.
+I1202 16:38:13.320188 139631277811520 collect_data.py:138] Collecting data from policy p1_ours_pure...
+I1202 16:38:43.141651 139631277811520 collect_data.py:98] (10000/500000) steps collected at 335.3 steps/s.
+I1202 16:39:09.150827 139631277811520 collect_data.py:98] (20000/500000) steps collected at 384.5 steps/s.
+I1202 16:39:35.011459 139631277811520 collect_data.py:98] (30000/500000) steps collected at 386.7 steps/s.
+I1202 16:40:00.453625 139631277811520 collect_data.py:98] (40000/500000) steps collected at 393 steps/s.
+I1202 16:40:25.982866 139631277811520 collect_data.py:98] (50000/500000) steps collected at 391.7 steps/s.
+I1202 16:40:51.833346 139631277811520 collect_data.py:98] (60000/500000) steps collected at 386.8 steps/s.
+I1202 16:41:17.416433 139631277811520 collect_data.py:98] (70000/500000) steps collected at 390.9 steps/s.
+I1202 16:41:43.226071 139631277811520 collect_data.py:98] (80000/500000) steps collected at 387.5 steps/s.
+I1202 16:42:08.962833 139631277811520 collect_data.py:98] (90000/500000) steps collected at 388.5 steps/s.
+I1202 16:42:34.707700 139631277811520 collect_data.py:98] (100000/500000) steps collected at 388.4 steps/s.
+I1202 16:43:00.615536 139631277811520 collect_data.py:98] (110000/500000) steps collected at 386 steps/s.
+I1202 16:43:26.403457 139631277811520 collect_data.py:98] (120000/500000) steps collected at 387.8 steps/s.
+I1202 16:43:52.085445 139631277811520 collect_data.py:98] (130000/500000) steps collected at 389.4 steps/s.
+I1202 16:44:22.685420 139631277811520 collect_data.py:98] (140000/500000) steps collected at 326.8 steps/s.
+I1202 16:44:48.411274 139631277811520 collect_data.py:98] (150000/500000) steps collected at 388.7 steps/s.
+I1202 16:45:14.162247 139631277811520 collect_data.py:98] (160000/500000) steps collected at 388.3 steps/s.
+I1202 16:45:39.935204 139631277811520 collect_data.py:98] (170000/500000) steps collected at 388 steps/s.
+I1202 16:46:05.639747 139631277811520 collect_data.py:98] (180000/500000) steps collected at 389 steps/s.
+I1202 16:46:31.527915 139631277811520 collect_data.py:98] (190000/500000) steps collected at 386.3 steps/s.
+I1202 16:46:57.289267 139631277811520 collect_data.py:98] (200000/500000) steps collected at 388.2 steps/s.
+I1202 16:47:22.926790 139631277811520 collect_data.py:98] (210000/500000) steps collected at 390.1 steps/s.
+I1202 16:47:48.587694 139631277811520 collect_data.py:98] (220000/500000) steps collected at 389.7 steps/s.
+I1202 16:48:14.321485 139631277811520 collect_data.py:98] (230000/500000) steps collected at 388.6 steps/s.
+I1202 16:48:40.085505 139631277811520 collect_data.py:98] (240000/500000) steps collected at 388.1 steps/s.
+I1202 16:49:05.647926 139631277811520 collect_data.py:98] (250000/500000) steps collected at 391.2 steps/s.
+I1202 16:49:31.516312 139631277811520 collect_data.py:98] (260000/500000) steps collected at 386.6 steps/s.
+I1202 16:49:57.266691 139631277811520 collect_data.py:98] (270000/500000) steps collected at 388.3 steps/s.
+I1202 16:50:22.777287 139631277811520 collect_data.py:98] (280000/500000) steps collected at 392 steps/s.
+I1202 16:50:48.584187 139631277811520 collect_data.py:98] (290000/500000) steps collected at 387.5 steps/s.
+I1202 16:51:19.990282 139631277811520 collect_data.py:98] (300000/500000) steps collected at 318.4 steps/s.
+I1202 16:51:45.280400 139631277811520 collect_data.py:98] (310000/500000) steps collected at 395.4 steps/s.
+I1202 16:52:10.396012 139631277811520 collect_data.py:98] (320000/500000) steps collected at 398.2 steps/s.
+I1202 16:52:35.619106 139631277811520 collect_data.py:98] (330000/500000) steps collected at 396.5 steps/s.
+I1202 16:53:00.996833 139631277811520 collect_data.py:98] (340000/500000) steps collected at 394 steps/s.
+I1202 16:53:26.076065 139631277811520 collect_data.py:98] (350000/500000) steps collected at 398.7 steps/s.
+I1202 16:53:51.259137 139631277811520 collect_data.py:98] (360000/500000) steps collected at 397.1 steps/s.
+I1202 16:54:16.570748 139631277811520 collect_data.py:98] (370000/500000) steps collected at 395.1 steps/s.
+I1202 16:54:41.821653 139631277811520 collect_data.py:98] (380000/500000) steps collected at 396 steps/s.
+I1202 16:55:07.015842 139631277811520 collect_data.py:98] (390000/500000) steps collected at 396.9 steps/s.
+I1202 16:55:32.443674 139631277811520 collect_data.py:98] (400000/500000) steps collected at 393.3 steps/s.
+I1202 16:55:57.577075 139631277811520 collect_data.py:98] (410000/500000) steps collected at 397.9 steps/s.
+I1202 16:56:23.159166 139631277811520 collect_data.py:98] (420000/500000) steps collected at 390.9 steps/s.
+I1202 16:56:48.411515 139631277811520 collect_data.py:98] (430000/500000) steps collected at 396 steps/s.
+I1202 16:57:13.688789 139631277811520 collect_data.py:98] (440000/500000) steps collected at 395.6 steps/s.
+I1202 16:57:38.985620 139631277811520 collect_data.py:98] (450000/500000) steps collected at 395.3 steps/s.
+I1202 16:58:04.121892 139631277811520 collect_data.py:98] (460000/500000) steps collected at 397.8 steps/s.
+I1202 16:58:29.401600 139631277811520 collect_data.py:98] (470000/500000) steps collected at 395.6 steps/s.
+I1202 16:58:54.800591 139631277811520 collect_data.py:98] (480000/500000) steps collected at 393.7 steps/s.
+I1202 16:59:20.152858 139631277811520 collect_data.py:98] (490000/500000) steps collected at 394.4 steps/s.
+I1202 16:59:45.503610 139631277811520 collect_data.py:98] (500000/500000) steps collected at 394.5 steps/s.
+I1202 16:59:46.671001 139631277811520 collect_data.py:147] Finished: 1000000 transitions collected, saved at /data1/yrli/tmp/offlinerl/data/Walker2d-v2/pure_two_policies1/1/data, time cost 2532s.
+action_shape: [6]
