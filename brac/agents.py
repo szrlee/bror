@@ -23,6 +23,7 @@ from behavior_regularized_offline_rl.brac import bci_agent
 from behavior_regularized_offline_rl.brac import bcq_agent
 from behavior_regularized_offline_rl.brac import brac_dual_agent
 from behavior_regularized_offline_rl.brac import brac_primal_agent
+from behavior_regularized_offline_rl.brac import braci_primal_agent
 from behavior_regularized_offline_rl.brac import sac_agent
 
 
@@ -32,5 +33,6 @@ AGENT_MODULES_DICT = {
     'bcq': bcq_agent,
     'sac': sac_agent,
     'brac_primal': brac_primal_agent,
+    'braci_primal': braci_primal_agent,
     'brac_dual': brac_dual_agent,
 }
