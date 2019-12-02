@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-
+import numpy as np
 from absl import app
 from absl import flags
 from absl import logging
@@ -27,6 +27,10 @@ from absl import logging
 
 import gin
 import tensorflow as tf
+
+# suppress annoying warning
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
 from behavior_regularized_offline_rl.brac import agents
 from behavior_regularized_offline_rl.brac import train_eval_offline
