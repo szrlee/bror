@@ -24,15 +24,15 @@ B_CKPT=/data1/yrli/tmp/offlinerl/learn/$ENV/$DATA/n1000000/bc/0/0/agent_behavior
 python train_offline.py \
   --alsologtostderr --sub_dir=auto \
   --env_name=$ENV \
-  --agent_name=brac_primal \
+  --agent_name=braci_primal \
   --data_name=$DATA \
   --data_sub_dir=$DATA_SUB_DIR \
   --total_train_steps=500000 \
-  --gin_bindings="brac_primal_agent.Agent.behavior_ckpt_file='$B_CKPT'" \
-  --gin_bindings="brac_primal_agent.Agent.alpha=$ALPHA" \
-  --gin_bindings="brac_primal_agent.Agent.value_penalty=$VALUE_PENALTY" \
-  --gin_bindings="brac_primal_agent.Agent.n_div_samples=10" \
-  --gin_bindings="brac_primal_agent.Agent.divergence_name='$DIVERGENCE'" \
+  --gin_bindings="braci_primal_agent.Agent.behavior_ckpt_file='$B_CKPT'" \
+  --gin_bindings="braci_primal_agent.Agent.alpha=$ALPHA" \
+  --gin_bindings="braci_primal_agent.Agent.value_penalty=$VALUE_PENALTY" \
+  --gin_bindings="braci_primal_agent.Agent.n_div_samples=10" \
+  --gin_bindings="braci_primal_agent.Agent.divergence_name='$DIVERGENCE'" \
   --gin_bindings="train_eval_offline.model_params=(((300, 300), (200, 200),), 2)" \
   --gin_bindings="train_eval_offline.batch_size=256" \
   --gin_bindings="train_eval_offline.optimizers=(('adam', 1e-3), ('adam', $PLR), ('adam', 1e-3))" \
