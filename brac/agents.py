@@ -27,6 +27,7 @@ from behavior_regularized_offline_rl.brac import sac_agent
 
 AGENT_MODULES_DICT = {
     'bc': bc_agent,
+    'bci': bci_agent,
     'bcq': bcq_agent,
     'sac': sac_agent,
     'brac_primal': brac_primal_agent,
