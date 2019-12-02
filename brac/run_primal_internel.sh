@@ -13,7 +13,8 @@
 # limitations under the License.
 
 #!/bin/bash
-ALPHA=0.1
+TRAIN_ALPHA=True
+ALPHA=3
 PLR=3e-04
 VALUE_PENALTY=True
 DIVERGENCE=kl
@@ -30,6 +31,7 @@ python train_offline.py \
   --total_train_steps=500000 \
   --gin_bindings="braci_primal_agent.Agent.behavior_ckpt_file='$B_CKPT'" \
   --gin_bindings="braci_primal_agent.Agent.alpha=$ALPHA" \
+  --gin_bindings="braci_primal_agent.Agent.train_alpha=$TRAIN_ALPHA" \
   --gin_bindings="braci_primal_agent.Agent.value_penalty=$VALUE_PENALTY" \
   --gin_bindings="braci_primal_agent.Agent.n_div_samples=10" \
   --gin_bindings="braci_primal_agent.Agent.divergence_name='$DIVERGENCE'" \

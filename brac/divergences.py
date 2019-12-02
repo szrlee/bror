@@ -74,6 +74,8 @@ class FDivergence(Divergence):
         s, utils.clip_by_eps(apn, action_spec, CLIP_EPS))
     abn_logp = p_fn.get_log_density(
         s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
+    #tf.print("abn_logp", abn_logp)
+    #tf.print("abn_logb", abn_logb)
     return self._primal_estimate_with_densities(
         apn_logp, apn_logb, abn_logp, abn_logb)
 
@@ -85,10 +87,12 @@ class FDivergence(Divergence):
     abn_logp = p_fn.get_log_density(
         s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
     IS_ratio = tf.exp(abn_logp - abn_logb)
-    print(IS_ratio)
-    IS_ratio = tf.minimum(1.0, IS_ratio)
-    #return tf.reduce_mean(tf.multiply(IS_ratio, abn_logp - abn_logb), axis=0)
-    return tf.reduce_mean(abn_logp - abn_logb, axis=0)
+    #tf.print("IS_ratio", IS_ratio)
+    IS_ratio = tf.maximum(1e-16, tf.minimum(1.0, IS_ratio))
+    #tf.print("abn_logp", abn_logp)
+    #tf.print("abn_logp - abn_logb", abn_logp - abn_logb)
+    return tf.reduce_mean(tf.multiply(IS_ratio, abn_logp - abn_logb), axis=0)
+    #return tf.reduce_mean(abn_logp - abn_logb, axis=0)
 
   def _primal_estimate_with_densities(
       self, apn_logp, apn_logb, abn_logp, abn_logb):
