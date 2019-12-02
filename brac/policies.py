@@ -62,8 +62,8 @@ class RandomSoftPolicy(tf.Module):
         [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
     action = tf.gather_nd(actions, gather_indices)
     #print(action)
-    actions = tf.reshape(actions, [batch_size, 10, -1])
-    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    actions = tf.reshape(actions, [batch_size, n_samples, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, n_samples])
     #print(actions)
     #print(log_pi_as)
     # log_pi_a = tf.gather_nd(log_pi_as, gather_indices)
@@ -138,8 +138,8 @@ class EpsilonGreedyRandomSoftPolicy(tf.Module):
     gather_indices = tf.stack(
         [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
     action = tf.gather_nd(actions, gather_indices)
-    actions = tf.reshape(actions, [batch_size, 10, -1])
-    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    actions = tf.reshape(actions, [batch_size, n_samples, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, n_samples])
     # epsilon greedy
     rand_action = tensor_spec.sample_bounded_spec(
         self._a_network.action_spec, outer_dims=[observation.shape[0]])
@@ -177,8 +177,8 @@ class GaussianRandomSoftPolicy(tf.Module):
     gather_indices = tf.stack(
         [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
     action = tf.gather_nd(actions, gather_indices)
-    actions = tf.reshape(actions, [batch_size, 10, -1])
-    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    actions = tf.reshape(actions, [batch_size, n_samples, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, n_samples])
     # add gaussian noise
     noise = tf.random_normal(shape=action.shape, stddev=self._std)
     action = action + noise
@@ -222,8 +222,8 @@ class GaussianEpsilonGreedySoftPolicy(tf.Module):
     gather_indices = tf.stack(
         [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
     action = tf.gather_nd(actions, gather_indices)
-    actions = tf.reshape(actions, [batch_size, 10, -1])
-    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    actions = tf.reshape(actions, [batch_size, n_samples, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, n_samples])
     # add gaussian noise and epsilon greedy
     noise = tf.random_normal(shape=action.shape, stddev=self._std)
     action = action + noise
