@@ -70,7 +70,7 @@ class DatasetWithInternalActions(tf.Module):
       size,
       circular=True,
       ):
-    super(Dataset, self).__init__()
+    super(DatasetWithInternalActions, self).__init__()
     self._size = size
     self._circular = circular
     obs_shape = list(observation_spec.shape)
