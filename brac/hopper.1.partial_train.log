@@ -1,0 +1,408 @@
+I1202 13:28:27.527154 139651685775168 train_eval_online.py:89] Collecting data ...
+I1202 13:28:38.704817 139651685775168 train_eval_online.py:101] (5000/10000) steps collected at 447.3 steps/s.
+I1202 13:28:49.887873 139651685775168 train_eval_online.py:101] (10000/10000) steps collected at 447.1 steps/s.
+I1202 13:28:50.014595 139651685775168 train_eval_online.py:131] Start training ....
+I1202 13:29:04.474667 139651685775168 agent.py:156] Step 1000; p_loss -10.77; p_norm 234.9; q_loss 0.937; q_norm 792; r_mean 0.9093; dsc_mean 0.9492; q1_target_mean 9.326; a_loss 3.036; alpha 0.634; 
+I1202 13:29:12.863562 139651685775168 agent.py:156] Step 2000; p_loss -19.22; p_norm 254; q_loss 3.88; q_norm 1147; r_mean 0.9721; dsc_mean 0.9688; q1_target_mean 17.53; a_loss 1.752; alpha 0.4457; 
+I1202 13:29:22.356236 139651685775168 agent.py:156] Step 3000; p_loss -30.27; p_norm 284.5; q_loss 2.639; q_norm 1791; r_mean 1.138; dsc_mean 0.9844; q1_target_mean 27.68; a_loss 0.9991; alpha 0.3342; 
+I1202 13:29:32.301787 139651685775168 agent.py:156] Step 4000; p_loss -40.5; p_norm 339.5; q_loss 13.28; q_norm 2625; r_mean 1.195; dsc_mean 0.9688; q1_target_mean 38.58; a_loss 0.718; alpha 0.2576; 
+I1202 13:29:42.547261 139651685775168 agent.py:156] Step 5000; p_loss -50.14; p_norm 409.8; q_loss 16.46; q_norm 3503; r_mean 1.177; dsc_mean 0.9297; q1_target_mean 46.46; a_loss 0.366; alpha 0.2026; 
+I1202 13:29:42.547475 139651685775168 train_eval_online.py:150] Training at 95.18 steps/s.
+I1202 13:29:46.257311 139651685775168 train_eval_online.py:167] Testing at step 5000:
+I1202 13:29:46.258261 139651685775168 train_eval_online.py:170] main: episode_mean 234.4; 
+I1202 13:29:56.185554 139651685775168 agent.py:156] Step 6000; p_loss -58.82; p_norm 487.1; q_loss 9.616; q_norm 4447; r_mean 1.268; dsc_mean 0.9648; q1_target_mean 56.85; a_loss 0.2286; alpha 0.1612; 
+I1202 13:30:06.245919 139651685775168 agent.py:156] Step 7000; p_loss -69.29; p_norm 580.9; q_loss 23.41; q_norm 5398; r_mean 1.435; dsc_mean 0.9648; q1_target_mean 66.24; a_loss 0.1254; alpha 0.1302; 
+I1202 13:30:15.313072 139651685775168 agent.py:156] Step 8000; p_loss -78.86; p_norm 684.2; q_loss 27.94; q_norm 6355; r_mean 1.299; dsc_mean 0.9531; q1_target_mean 75.02; a_loss 0.05562; alpha 0.1086; 
+I1202 13:30:23.841162 139651685775168 agent.py:156] Step 9000; p_loss -87.44; p_norm 785.3; q_loss 11.78; q_norm 7303; r_mean 1.454; dsc_mean 0.9883; q1_target_mean 83.62; a_loss 0.02167; alpha 0.09665; 
+I1202 13:30:32.303378 139651685775168 agent.py:156] Step 10000; p_loss -98.33; p_norm 879.4; q_loss 21.17; q_norm 8277; r_mean 1.465; dsc_mean 0.9883; q1_target_mean 93.83; a_loss -0.004344; alpha 0.09326; 
+I1202 13:30:32.303602 139651685775168 train_eval_online.py:150] Training at 108.6 steps/s.
+I1202 13:30:36.631576 139651685775168 train_eval_online.py:167] Testing at step 10000:
+I1202 13:30:36.631789 139651685775168 train_eval_online.py:170] main: episode_mean 381.7; 
+I1202 13:30:45.120098 139651685775168 agent.py:156] Step 11000; p_loss -102.6; p_norm 962.6; q_loss 25.61; q_norm 9248; r_mean 1.611; dsc_mean 0.9727; q1_target_mean 98.7; a_loss -0.01035; alpha 0.08903; 
+I1202 13:30:54.538599 139651685775168 agent.py:156] Step 12000; p_loss -116.2; p_norm 1044; q_loss 13.87; q_norm 1.026e+04; r_mean 1.731; dsc_mean 0.9883; q1_target_mean 112.4; a_loss 0.02947; alpha 0.09052; 
+I1202 13:31:04.528845 139651685775168 agent.py:156] Step 13000; p_loss -117.6; p_norm 1117; q_loss 17.1; q_norm 1.12e+04; r_mean 1.699; dsc_mean 0.9688; q1_target_mean 113.9; a_loss -0.05257; alpha 0.09456; 
+I1202 13:31:14.542970 139651685775168 agent.py:156] Step 14000; p_loss -127.8; p_norm 1185; q_loss 20.18; q_norm 1.211e+04; r_mean 1.742; dsc_mean 0.9883; q1_target_mean 124.1; a_loss 0.01856; alpha 0.0976; 
+I1202 13:31:24.530769 139651685775168 agent.py:156] Step 15000; p_loss -129; p_norm 1252; q_loss 23.69; q_norm 1.298e+04; r_mean 1.709; dsc_mean 0.9805; q1_target_mean 126.1; a_loss -0.01255; alpha 0.1012; 
+I1202 13:31:24.530998 139651685775168 train_eval_online.py:150] Training at 104.4 steps/s.
+I1202 13:31:29.153464 139651685775168 train_eval_online.py:167] Testing at step 15000:
+I1202 13:31:29.153715 139651685775168 train_eval_online.py:170] main: episode_mean 415.2; 
+I1202 13:31:39.586827 139651685775168 agent.py:156] Step 16000; p_loss -132.9; p_norm 1317; q_loss 29.95; q_norm 1.39e+04; r_mean 1.853; dsc_mean 0.9648; q1_target_mean 130.3; a_loss 0.005065; alpha 0.107; 
+I1202 13:31:48.559607 139651685775168 agent.py:156] Step 17000; p_loss -141.2; p_norm 1381; q_loss 18.83; q_norm 1.478e+04; r_mean 1.859; dsc_mean 0.9805; q1_target_mean 137; a_loss 0.009223; alpha 0.108; 
+I1202 13:31:57.023887 139651685775168 agent.py:156] Step 18000; p_loss -143.6; p_norm 1453; q_loss 37.93; q_norm 1.564e+04; r_mean 1.911; dsc_mean 0.9688; q1_target_mean 138.5; a_loss -0.03589; alpha 0.1067; 
+I1202 13:32:06.449627 139651685775168 agent.py:156] Step 19000; p_loss -151.1; p_norm 1522; q_loss 34.83; q_norm 1.648e+04; r_mean 1.82; dsc_mean 0.9922; q1_target_mean 147.3; a_loss -0.004296; alpha 0.1142; 
+I1202 13:32:16.431700 139651685775168 agent.py:156] Step 20000; p_loss -149.7; p_norm 1582; q_loss 34.04; q_norm 1.731e+04; r_mean 1.953; dsc_mean 0.9805; q1_target_mean 147.4; a_loss 0.0256; alpha 0.1307; 
+I1202 13:32:16.431915 139651685775168 train_eval_online.py:150] Training at 105.8 steps/s.
+I1202 13:32:21.027513 139651685775168 train_eval_online.py:167] Testing at step 20000:
+I1202 13:32:21.027807 139651685775168 train_eval_online.py:170] main: episode_mean 420.2; 
+I1202 13:32:31.039400 139651685775168 agent.py:156] Step 21000; p_loss -154.9; p_norm 1638; q_loss 36.75; q_norm 1.817e+04; r_mean 1.912; dsc_mean 0.9766; q1_target_mean 151.5; a_loss -0.02466; alpha 0.1179; 
+I1202 13:32:41.064317 139651685775168 agent.py:156] Step 22000; p_loss -167.6; p_norm 1698; q_loss 26.64; q_norm 1.904e+04; r_mean 1.961; dsc_mean 0.9922; q1_target_mean 164.3; a_loss 0.03661; alpha 0.1152; 
+I1202 13:32:51.149664 139651685775168 agent.py:156] Step 23000; p_loss -153.4; p_norm 1756; q_loss 29.93; q_norm 1.99e+04; r_mean 2.091; dsc_mean 0.9688; q1_target_mean 151.5; a_loss 0.02382; alpha 0.116; 
+I1202 13:33:00.158395 139651685775168 agent.py:156] Step 24000; p_loss -166.6; p_norm 1816; q_loss 20.13; q_norm 2.076e+04; r_mean 1.986; dsc_mean 0.9883; q1_target_mean 162.6; a_loss 0.003671; alpha 0.1219; 
+I1202 13:33:09.104938 139651685775168 agent.py:156] Step 25000; p_loss -167.9; p_norm 1871; q_loss 52.36; q_norm 2.161e+04; r_mean 2.118; dsc_mean 0.9727; q1_target_mean 164.2; a_loss -0.02635; alpha 0.1311; 
+I1202 13:33:09.105138 139651685775168 train_eval_online.py:150] Training at 104 steps/s.
+I1202 13:33:14.159088 139651685775168 train_eval_online.py:167] Testing at step 25000:
+I1202 13:33:14.159375 139651685775168 train_eval_online.py:170] main: episode_mean 517.2; 
+I1202 13:33:24.124511 139651685775168 agent.py:156] Step 26000; p_loss -173.9; p_norm 1924; q_loss 19.77; q_norm 2.247e+04; r_mean 2.005; dsc_mean 0.9766; q1_target_mean 171; a_loss 0.003549; alpha 0.1444; 
+I1202 13:33:34.107571 139651685775168 agent.py:156] Step 27000; p_loss -169.8; p_norm 1974; q_loss 51.06; q_norm 2.333e+04; r_mean 2.093; dsc_mean 0.9648; q1_target_mean 166.2; a_loss 0.0294; alpha 0.1458; 
+I1202 13:33:44.111079 139651685775168 agent.py:156] Step 28000; p_loss -180.6; p_norm 2023; q_loss 38.35; q_norm 2.416e+04; r_mean 2.187; dsc_mean 0.9883; q1_target_mean 176.3; a_loss 0.01507; alpha 0.1432; 
+I1202 13:33:54.105514 139651685775168 agent.py:156] Step 29000; p_loss -185.9; p_norm 2068; q_loss 47.8; q_norm 2.506e+04; r_mean 2.123; dsc_mean 0.9805; q1_target_mean 183.7; a_loss 0.05145; alpha 0.1471; 
+I1202 13:34:04.108381 139651685775168 agent.py:156] Step 30000; p_loss -185.1; p_norm 2114; q_loss 33.22; q_norm 2.59e+04; r_mean 2.169; dsc_mean 0.9922; q1_target_mean 182.2; a_loss 0.07026; alpha 0.1482; 
+I1202 13:34:04.108638 139651685775168 train_eval_online.py:150] Training at 100.1 steps/s.
+I1202 13:34:11.928618 139651685775168 train_eval_online.py:167] Testing at step 30000:
+I1202 13:34:11.928807 139651685775168 train_eval_online.py:170] main: episode_mean 756.3; 
+I1202 13:34:20.486603 139651685775168 agent.py:156] Step 31000; p_loss -188.8; p_norm 2165; q_loss 28.87; q_norm 2.668e+04; r_mean 2.079; dsc_mean 0.9883; q1_target_mean 185; a_loss 0.007871; alpha 0.1441; 
+I1202 13:34:30.444538 139651685775168 agent.py:156] Step 32000; p_loss -196.7; p_norm 2215; q_loss 47.04; q_norm 2.747e+04; r_mean 2.119; dsc_mean 0.9961; q1_target_mean 193.1; a_loss 0.03004; alpha 0.1344; 
+I1202 13:34:40.433773 139651685775168 agent.py:156] Step 33000; p_loss -194; p_norm 2260; q_loss 35.27; q_norm 2.821e+04; r_mean 2.221; dsc_mean 1; q1_target_mean 191.1; a_loss -0.06621; alpha 0.1436; 
+I1202 13:34:50.933173 139651685775168 agent.py:156] Step 34000; p_loss -196.2; p_norm 2301; q_loss 64.83; q_norm 2.893e+04; r_mean 2.171; dsc_mean 0.9805; q1_target_mean 192.5; a_loss -0.006214; alpha 0.1411; 
+I1202 13:35:00.934056 139651685775168 agent.py:156] Step 35000; p_loss -193.3; p_norm 2342; q_loss 34.26; q_norm 2.961e+04; r_mean 2.245; dsc_mean 0.9883; q1_target_mean 190.5; a_loss -0.02556; alpha 0.1348; 
+I1202 13:35:00.934277 139651685775168 train_eval_online.py:150] Training at 102 steps/s.
+I1202 13:35:25.537241 139651685775168 train_eval_online.py:167] Testing at step 35000:
+I1202 13:35:25.537430 139651685775168 train_eval_online.py:170] main: episode_mean 2541; 
+I1202 13:35:35.093987 139651685775168 agent.py:156] Step 36000; p_loss -189.4; p_norm 2386; q_loss 30.99; q_norm 3.025e+04; r_mean 2.388; dsc_mean 0.9961; q1_target_mean 187.1; a_loss -0.01002; alpha 0.1283; 
+I1202 13:35:45.105693 139651685775168 agent.py:156] Step 37000; p_loss -196.3; p_norm 2434; q_loss 75.98; q_norm 3.088e+04; r_mean 2.3; dsc_mean 0.9844; q1_target_mean 191.3; a_loss 0.01663; alpha 0.1306; 
+I1202 13:35:55.094697 139651685775168 agent.py:156] Step 38000; p_loss -191.1; p_norm 2484; q_loss 46.22; q_norm 3.149e+04; r_mean 2.373; dsc_mean 0.9766; q1_target_mean 186.8; a_loss 0.003667; alpha 0.1239; 
+I1202 13:36:05.108780 139651685775168 agent.py:156] Step 39000; p_loss -202.5; p_norm 2532; q_loss 19.02; q_norm 3.212e+04; r_mean 2.27; dsc_mean 0.9844; q1_target_mean 201; a_loss -0.01588; alpha 0.1175; 
+I1202 13:36:15.123284 139651685775168 agent.py:156] Step 40000; p_loss -198.2; p_norm 2576; q_loss 28.23; q_norm 3.274e+04; r_mean 2.268; dsc_mean 0.9805; q1_target_mean 195.1; a_loss 0.04019; alpha 0.1238; 
+I1202 13:36:15.123591 139651685775168 train_eval_online.py:150] Training at 100.8 steps/s.
+I1202 13:36:23.409455 139651685775168 train_eval_online.py:167] Testing at step 40000:
+I1202 13:36:23.409668 139651685775168 train_eval_online.py:170] main: episode_mean 778.3; 
+I1202 13:36:31.904251 139651685775168 agent.py:156] Step 41000; p_loss -200.3; p_norm 2619; q_loss 48.13; q_norm 3.331e+04; r_mean 2.396; dsc_mean 0.9766; q1_target_mean 196.1; a_loss -0.02697; alpha 0.1133; 
+I1202 13:36:41.222580 139651685775168 agent.py:156] Step 42000; p_loss -198.1; p_norm 2661; q_loss 28.59; q_norm 3.393e+04; r_mean 2.467; dsc_mean 0.9883; q1_target_mean 195.5; a_loss 0.02316; alpha 0.1184; 
+I1202 13:36:51.127728 139651685775168 agent.py:156] Step 43000; p_loss -206.2; p_norm 2702; q_loss 19.85; q_norm 3.447e+04; r_mean 2.4; dsc_mean 0.9844; q1_target_mean 202.8; a_loss 0.01292; alpha 0.1239; 
+I1202 13:37:01.178583 139651685775168 agent.py:156] Step 44000; p_loss -207.6; p_norm 2749; q_loss 16.74; q_norm 3.504e+04; r_mean 2.516; dsc_mean 1; q1_target_mean 205.3; a_loss 0.008511; alpha 0.1107; 
+I1202 13:37:11.164043 139651685775168 agent.py:156] Step 45000; p_loss -207.1; p_norm 2798; q_loss 34.35; q_norm 3.559e+04; r_mean 2.274; dsc_mean 0.9844; q1_target_mean 203.7; a_loss -0.03169; alpha 0.1086; 
+I1202 13:37:11.164371 139651685775168 train_eval_online.py:150] Training at 104.7 steps/s.
+I1202 13:37:23.944586 139651685775168 train_eval_online.py:167] Testing at step 45000:
+I1202 13:37:23.944798 139651685775168 train_eval_online.py:170] main: episode_mean 1267; 
+I1202 13:37:33.363201 139651685775168 agent.py:156] Step 46000; p_loss -206.2; p_norm 2845; q_loss 24.68; q_norm 3.614e+04; r_mean 2.403; dsc_mean 0.9805; q1_target_mean 202.7; a_loss 0.007647; alpha 0.1043; 
+I1202 13:37:41.893383 139651685775168 agent.py:156] Step 47000; p_loss -203.7; p_norm 2890; q_loss 27.33; q_norm 3.657e+04; r_mean 2.442; dsc_mean 0.9922; q1_target_mean 201.6; a_loss 0.01865; alpha 0.1078; 
+I1202 13:37:50.406997 139651685775168 agent.py:156] Step 48000; p_loss -197.3; p_norm 2940; q_loss 29.58; q_norm 3.698e+04; r_mean 2.48; dsc_mean 0.9766; q1_target_mean 195.4; a_loss -0.01771; alpha 0.1075; 
+I1202 13:37:59.810851 139651685775168 agent.py:156] Step 49000; p_loss -204.4; p_norm 2983; q_loss 18.48; q_norm 3.735e+04; r_mean 2.559; dsc_mean 0.9961; q1_target_mean 202.5; a_loss 0.01114; alpha 0.104; 
+I1202 13:38:09.861997 139651685775168 agent.py:156] Step 50000; p_loss -210.6; p_norm 3028; q_loss 19.19; q_norm 3.771e+04; r_mean 2.359; dsc_mean 0.9922; q1_target_mean 210.2; a_loss 0.03674; alpha 0.1045; 
+I1202 13:38:09.862292 139651685775168 train_eval_online.py:150] Training at 108.9 steps/s.
+I1202 13:38:14.616228 139651685775168 train_eval_online.py:167] Testing at step 50000:
+I1202 13:38:14.616428 139651685775168 train_eval_online.py:170] main: episode_mean 312.5; 
+I1202 13:38:24.693889 139651685775168 agent.py:156] Step 51000; p_loss -216.5; p_norm 3074; q_loss 27.65; q_norm 3.812e+04; r_mean 2.383; dsc_mean 0.9961; q1_target_mean 213.1; a_loss 0.02654; alpha 0.109; 
+I1202 13:38:34.628047 139651685775168 agent.py:156] Step 52000; p_loss -208.4; p_norm 3113; q_loss 22.6; q_norm 3.844e+04; r_mean 2.382; dsc_mean 0.9922; q1_target_mean 206.1; a_loss -0.005728; alpha 0.1078; 
+I1202 13:38:44.650340 139651685775168 agent.py:156] Step 53000; p_loss -214.8; p_norm 3156; q_loss 19.55; q_norm 3.878e+04; r_mean 2.351; dsc_mean 0.9961; q1_target_mean 214.4; a_loss 0.01223; alpha 0.103; 
+I1202 13:38:53.754173 139651685775168 agent.py:156] Step 54000; p_loss -206.2; p_norm 3194; q_loss 22.82; q_norm 3.906e+04; r_mean 2.483; dsc_mean 0.9844; q1_target_mean 205.3; a_loss -0.003128; alpha 0.1015; 
+I1202 13:39:02.995839 139651685775168 agent.py:156] Step 55000; p_loss -207.9; p_norm 3230; q_loss 37.07; q_norm 3.936e+04; r_mean 2.488; dsc_mean 0.9844; q1_target_mean 206.1; a_loss -0.0004199; alpha 0.1075; 
+I1202 13:39:02.996026 139651685775168 train_eval_online.py:150] Training at 103.4 steps/s.
+I1202 13:39:11.284885 139651685775168 train_eval_online.py:167] Testing at step 55000:
+I1202 13:39:11.285156 139651685775168 train_eval_online.py:170] main: episode_mean 920.6; 
+I1202 13:39:21.219421 139651685775168 agent.py:156] Step 56000; p_loss -213.3; p_norm 3265; q_loss 30.27; q_norm 3.968e+04; r_mean 2.487; dsc_mean 0.9766; q1_target_mean 209.6; a_loss 0.04627; alpha 0.1097; 
+I1202 13:39:31.236001 139651685775168 agent.py:156] Step 57000; p_loss -211; p_norm 3304; q_loss 32.13; q_norm 4.004e+04; r_mean 2.499; dsc_mean 0.9844; q1_target_mean 209.1; a_loss -0.02883; alpha 0.1057; 
+I1202 13:39:41.272484 139651685775168 agent.py:156] Step 58000; p_loss -211.9; p_norm 3343; q_loss 35.53; q_norm 4.036e+04; r_mean 2.457; dsc_mean 0.9805; q1_target_mean 209.7; a_loss -0.03312; alpha 0.1041; 
+I1202 13:39:51.246289 139651685775168 agent.py:156] Step 59000; p_loss -216.5; p_norm 3377; q_loss 48.85; q_norm 4.071e+04; r_mean 2.415; dsc_mean 0.9727; q1_target_mean 214.8; a_loss -0.009987; alpha 0.1004; 
+I1202 13:40:01.333840 139651685775168 agent.py:156] Step 60000; p_loss -209.9; p_norm 3411; q_loss 35.88; q_norm 4.106e+04; r_mean 2.598; dsc_mean 0.9844; q1_target_mean 206.4; a_loss -0.003023; alpha 0.1006; 
+I1202 13:40:01.334060 139651685775168 train_eval_online.py:150] Training at 99.9 steps/s.
+I1202 13:40:05.906411 139651685775168 train_eval_online.py:167] Testing at step 60000:
+I1202 13:40:05.906621 139651685775168 train_eval_online.py:170] main: episode_mean 449.7; 
+I1202 13:40:14.461625 139651685775168 agent.py:156] Step 61000; p_loss -216.2; p_norm 3444; q_loss 54.44; q_norm 4.149e+04; r_mean 2.5; dsc_mean 0.9883; q1_target_mean 213.9; a_loss 0.04289; alpha 0.09129; 
+I1202 13:40:22.933991 139651685775168 agent.py:156] Step 62000; p_loss -214.6; p_norm 3479; q_loss 129.6; q_norm 4.177e+04; r_mean 2.505; dsc_mean 0.9883; q1_target_mean 213.6; a_loss -0.0282; alpha 0.08852; 
+I1202 13:40:31.981304 139651685775168 agent.py:156] Step 63000; p_loss -206.7; p_norm 3515; q_loss 30.82; q_norm 4.206e+04; r_mean 2.666; dsc_mean 0.9922; q1_target_mean 206.2; a_loss -0.01023; alpha 0.08841; 
+I1202 13:40:41.987309 139651685775168 agent.py:156] Step 64000; p_loss -216.5; p_norm 3551; q_loss 21.26; q_norm 4.248e+04; r_mean 2.571; dsc_mean 0.9961; q1_target_mean 214.9; a_loss 0.0119; alpha 0.09209; 
+I1202 13:40:51.957757 139651685775168 agent.py:156] Step 65000; p_loss -212.3; p_norm 3585; q_loss 15.33; q_norm 4.282e+04; r_mean 2.665; dsc_mean 0.9922; q1_target_mean 211.6; a_loss 0.02525; alpha 0.08797; 
+I1202 13:40:51.957948 139651685775168 train_eval_online.py:150] Training at 108.6 steps/s.
+I1202 13:40:57.949786 139651685775168 train_eval_online.py:167] Testing at step 65000:
+I1202 13:40:57.950010 139651685775168 train_eval_online.py:170] main: episode_mean 420.3; 
+I1202 13:41:07.960900 139651685775168 agent.py:156] Step 66000; p_loss -212.4; p_norm 3621; q_loss 26.75; q_norm 4.313e+04; r_mean 2.5; dsc_mean 0.9883; q1_target_mean 210.6; a_loss 0.02482; alpha 0.08683; 
+I1202 13:41:17.969641 139651685775168 agent.py:156] Step 67000; p_loss -212.8; p_norm 3662; q_loss 16.35; q_norm 4.345e+04; r_mean 2.564; dsc_mean 0.9961; q1_target_mean 211.5; a_loss -0.01017; alpha 0.0887; 
+I1202 13:41:27.196916 139651685775168 agent.py:156] Step 68000; p_loss -212.8; p_norm 3696; q_loss 35.38; q_norm 4.367e+04; r_mean 2.56; dsc_mean 0.9922; q1_target_mean 211.2; a_loss 0.04603; alpha 0.0858; 
+I1202 13:41:35.852819 139651685775168 agent.py:156] Step 69000; p_loss -214.3; p_norm 3737; q_loss 17.83; q_norm 4.398e+04; r_mean 2.581; dsc_mean 0.9922; q1_target_mean 212.5; a_loss -0.003799; alpha 0.08755; 
+I1202 13:41:44.550847 139651685775168 agent.py:156] Step 70000; p_loss -219.4; p_norm 3771; q_loss 17.67; q_norm 4.424e+04; r_mean 2.534; dsc_mean 0.9961; q1_target_mean 218.8; a_loss 0.01015; alpha 0.08807; 
+I1202 13:41:44.551126 139651685775168 train_eval_online.py:150] Training at 107.3 steps/s.
+I1202 13:42:07.108000 139651685775168 train_eval_online.py:167] Testing at step 70000:
+I1202 13:42:07.108216 139651685775168 train_eval_online.py:170] main: episode_mean 2161; 
+I1202 13:42:18.434924 139651685775168 agent.py:156] Step 71000; p_loss -207.3; p_norm 3807; q_loss 25.9; q_norm 4.451e+04; r_mean 2.469; dsc_mean 0.9766; q1_target_mean 206.1; a_loss 0.01844; alpha 0.08421; 
+I1202 13:42:29.824346 139651685775168 agent.py:156] Step 72000; p_loss -217.1; p_norm 3843; q_loss 14.75; q_norm 4.473e+04; r_mean 2.578; dsc_mean 0.9961; q1_target_mean 216.2; a_loss 0.007098; alpha 0.08692; 
+I1202 13:42:41.285026 139651685775168 agent.py:156] Step 73000; p_loss -216.4; p_norm 3879; q_loss 14.43; q_norm 4.496e+04; r_mean 2.648; dsc_mean 0.9961; q1_target_mean 213.9; a_loss -0.01755; alpha 0.08146; 
+I1202 13:42:52.362622 139651685775168 agent.py:156] Step 74000; p_loss -215.7; p_norm 3917; q_loss 12.32; q_norm 4.522e+04; r_mean 2.596; dsc_mean 0.9883; q1_target_mean 214.9; a_loss 0.01863; alpha 0.08713; 
+I1202 13:43:02.158115 139651685775168 agent.py:156] Step 75000; p_loss -216.3; p_norm 3955; q_loss 26.49; q_norm 4.545e+04; r_mean 2.6; dsc_mean 0.9883; q1_target_mean 213.8; a_loss 0.000877; alpha 0.08432; 
+I1202 13:43:02.158303 139651685775168 train_eval_online.py:150] Training at 90.83 steps/s.
+I1202 13:43:27.593978 139651685775168 train_eval_online.py:165] A partially trained policy was saved at step 75000, with episodic return 2161.
+I1202 13:43:27.594169 139651685775168 train_eval_online.py:167] Testing at step 75000:
+I1202 13:43:27.594271 139651685775168 train_eval_online.py:170] main: episode_mean 2453; 
+I1202 13:43:39.056893 139651685775168 agent.py:156] Step 76000; p_loss -219.8; p_norm 3992; q_loss 37.45; q_norm 4.572e+04; r_mean 2.606; dsc_mean 1; q1_target_mean 218.4; a_loss 0.008822; alpha 0.08393; 
+I1202 13:43:50.494144 139651685775168 agent.py:156] Step 77000; p_loss -216.9; p_norm 4029; q_loss 159.3; q_norm 4.595e+04; r_mean 2.724; dsc_mean 0.9805; q1_target_mean 216.2; a_loss 0.0275; alpha 0.08328; 
+I1202 13:44:01.844916 139651685775168 agent.py:156] Step 78000; p_loss -220.1; p_norm 4067; q_loss 25.94; q_norm 4.62e+04; r_mean 2.737; dsc_mean 0.9766; q1_target_mean 218.4; a_loss -0.01885; alpha 0.08404; 
+I1202 13:44:12.937403 139651685775168 agent.py:156] Step 79000; p_loss -217.6; p_norm 4101; q_loss 93.43; q_norm 4.644e+04; r_mean 2.655; dsc_mean 0.9844; q1_target_mean 217.1; a_loss -0.01323; alpha 0.08351; 
+I1202 13:44:22.940268 139651685775168 agent.py:156] Step 80000; p_loss -214.6; p_norm 4137; q_loss 15.95; q_norm 4.663e+04; r_mean 2.636; dsc_mean 0.9961; q1_target_mean 214.4; a_loss 0.02646; alpha 0.08507; 
+I1202 13:44:22.940550 139651685775168 train_eval_online.py:150] Training at 90.34 steps/s.
+I1202 13:44:49.194530 139651685775168 train_eval_online.py:167] Testing at step 80000:
+I1202 13:44:49.194762 139651685775168 train_eval_online.py:170] main: episode_mean 2423; 
+I1202 13:44:59.969417 139651685775168 agent.py:156] Step 81000; p_loss -226.6; p_norm 4178; q_loss 15.23; q_norm 4.69e+04; r_mean 2.698; dsc_mean 1; q1_target_mean 224.9; a_loss 0.006424; alpha 0.08081; 
+I1202 13:45:11.214735 139651685775168 agent.py:156] Step 82000; p_loss -222.3; p_norm 4215; q_loss 15.54; q_norm 4.712e+04; r_mean 2.642; dsc_mean 0.9883; q1_target_mean 222.1; a_loss -0.005834; alpha 0.08068; 
+I1202 13:45:23.946955 139651685775168 agent.py:156] Step 83000; p_loss -218.9; p_norm 4254; q_loss 42.9; q_norm 4.736e+04; r_mean 2.747; dsc_mean 0.9961; q1_target_mean 218.2; a_loss 0.04277; alpha 0.08087; 
+I1202 13:45:35.393892 139651685775168 agent.py:156] Step 84000; p_loss -223.3; p_norm 4292; q_loss 9.722; q_norm 4.758e+04; r_mean 2.648; dsc_mean 0.9922; q1_target_mean 221.8; a_loss 0.02656; alpha 0.07624; 
+I1202 13:45:45.483697 139651685775168 agent.py:156] Step 85000; p_loss -223.5; p_norm 4330; q_loss 16.74; q_norm 4.782e+04; r_mean 2.68; dsc_mean 0.9961; q1_target_mean 222.3; a_loss 0.01603; alpha 0.07911; 
+I1202 13:45:45.483892 139651685775168 train_eval_online.py:150] Training at 88.83 steps/s.
+I1202 13:46:17.190961 139651685775168 train_eval_online.py:167] Testing at step 85000:
+I1202 13:46:17.191282 139651685775168 train_eval_online.py:170] main: episode_mean 3210; 
+I1202 13:46:28.346113 139651685775168 agent.py:156] Step 86000; p_loss -228.1; p_norm 4363; q_loss 16.99; q_norm 4.803e+04; r_mean 2.705; dsc_mean 0.9961; q1_target_mean 227.3; a_loss 0.02002; alpha 0.07932; 
+I1202 13:46:39.558782 139651685775168 agent.py:156] Step 87000; p_loss -230.1; p_norm 4403; q_loss 39.73; q_norm 4.831e+04; r_mean 2.601; dsc_mean 0.9922; q1_target_mean 229.3; a_loss -0.0209; alpha 0.07508; 
+I1202 13:46:50.977760 139651685775168 agent.py:156] Step 88000; p_loss -229.9; p_norm 4445; q_loss 14.53; q_norm 4.861e+04; r_mean 2.674; dsc_mean 0.9922; q1_target_mean 228; a_loss 0.01694; alpha 0.07706; 
+I1202 13:47:01.470455 139651685775168 agent.py:156] Step 89000; p_loss -225.9; p_norm 4485; q_loss 15.06; q_norm 4.888e+04; r_mean 2.775; dsc_mean 0.9883; q1_target_mean 225.5; a_loss -0.004473; alpha 0.07822; 
+I1202 13:47:11.465071 139651685775168 agent.py:156] Step 90000; p_loss -225.6; p_norm 4518; q_loss 28.54; q_norm 4.91e+04; r_mean 2.745; dsc_mean 0.9844; q1_target_mean 224.8; a_loss -0.01714; alpha 0.07669; 
+I1202 13:47:11.465358 139651685775168 train_eval_online.py:150] Training at 92.13 steps/s.
+I1202 13:47:45.874909 139651685775168 train_eval_online.py:167] Testing at step 90000:
+I1202 13:47:45.875333 139651685775168 train_eval_online.py:170] main: episode_mean 3186; 
+I1202 13:47:57.253244 139651685775168 agent.py:156] Step 91000; p_loss -231.7; p_norm 4553; q_loss 11.48; q_norm 4.931e+04; r_mean 2.786; dsc_mean 0.9883; q1_target_mean 231.4; a_loss -0.00252; alpha 0.0752; 
+I1202 13:48:08.649536 139651685775168 agent.py:156] Step 92000; p_loss -237.1; p_norm 4591; q_loss 16.71; q_norm 4.953e+04; r_mean 2.71; dsc_mean 0.9922; q1_target_mean 235.4; a_loss 0.01576; alpha 0.0753; 
+I1202 13:48:18.791698 139651685775168 agent.py:156] Step 93000; p_loss -231.1; p_norm 4627; q_loss 11.87; q_norm 4.978e+04; r_mean 2.733; dsc_mean 0.9844; q1_target_mean 230.4; a_loss 0.002394; alpha 0.07623; 
+I1202 13:48:28.255045 139651685775168 agent.py:156] Step 94000; p_loss -238.6; p_norm 4663; q_loss 25.56; q_norm 4.999e+04; r_mean 2.731; dsc_mean 0.9922; q1_target_mean 237.1; a_loss -0.008049; alpha 0.07517; 
+I1202 13:48:38.236207 139651685775168 agent.py:156] Step 95000; p_loss -233.1; p_norm 4695; q_loss 30.7; q_norm 5.022e+04; r_mean 2.785; dsc_mean 0.9961; q1_target_mean 232.1; a_loss -0.006702; alpha 0.07308; 
+I1202 13:48:38.236602 139651685775168 train_eval_online.py:150] Training at 95.49 steps/s.
+I1202 13:49:14.798310 139651685775168 train_eval_online.py:167] Testing at step 95000:
+I1202 13:49:14.798538 139651685775168 train_eval_online.py:170] main: episode_mean 3092; 
+I1202 13:49:25.792958 139651685775168 agent.py:156] Step 96000; p_loss -233.2; p_norm 4724; q_loss 15.56; q_norm 5.044e+04; r_mean 2.698; dsc_mean 0.9883; q1_target_mean 232.9; a_loss 0.003582; alpha 0.07488; 
+I1202 13:49:37.154432 139651685775168 agent.py:156] Step 97000; p_loss -234.2; p_norm 4755; q_loss 33.99; q_norm 5.065e+04; r_mean 2.843; dsc_mean 0.9844; q1_target_mean 231.2; a_loss 0.0004189; alpha 0.07459; 
+I1202 13:49:47.709528 139651685775168 agent.py:156] Step 98000; p_loss -227.2; p_norm 4787; q_loss 61.82; q_norm 5.093e+04; r_mean 2.824; dsc_mean 0.9844; q1_target_mean 225.2; a_loss -0.0358; alpha 0.07166; 
+I1202 13:49:57.725434 139651685775168 agent.py:156] Step 99000; p_loss -234.7; p_norm 4829; q_loss 50.82; q_norm 5.115e+04; r_mean 2.77; dsc_mean 0.9922; q1_target_mean 233.3; a_loss -0.01248; alpha 0.06911; 
+I1202 13:50:07.922284 139651685775168 agent.py:156] Step 100000; p_loss -237.4; p_norm 4870; q_loss 21.57; q_norm 5.135e+04; r_mean 2.742; dsc_mean 0.9883; q1_target_mean 235.8; a_loss 0.007244; alpha 0.07239; 
+I1202 13:50:07.922513 139651685775168 train_eval_online.py:150] Training at 94.12 steps/s.
+I1202 13:50:42.569111 139651685775168 train_eval_online.py:167] Testing at step 100000:
+I1202 13:50:42.569351 139651685775168 train_eval_online.py:170] main: episode_mean 3255; 
+I1202 13:50:53.962282 139651685775168 agent.py:156] Step 101000; p_loss -231.4; p_norm 4905; q_loss 9.535; q_norm 5.156e+04; r_mean 2.845; dsc_mean 0.9922; q1_target_mean 231.7; a_loss 0.01849; alpha 0.07236; 
+I1202 13:51:05.137740 139651685775168 agent.py:156] Step 102000; p_loss -239.1; p_norm 4941; q_loss 15.33; q_norm 5.184e+04; r_mean 2.73; dsc_mean 0.9961; q1_target_mean 238.1; a_loss 0.0311; alpha 0.06727; 
+I1202 13:51:14.830761 139651685775168 agent.py:156] Step 103000; p_loss -238; p_norm 4976; q_loss 11.02; q_norm 5.208e+04; r_mean 2.848; dsc_mean 0.9961; q1_target_mean 235.7; a_loss -0.03688; alpha 0.06575; 
+I1202 13:51:23.533347 139651685775168 agent.py:156] Step 104000; p_loss -236.6; p_norm 5011; q_loss 8.864; q_norm 5.228e+04; r_mean 2.825; dsc_mean 0.9961; q1_target_mean 235.9; a_loss 0.005547; alpha 0.06823; 
+I1202 13:51:33.943519 139651685775168 agent.py:156] Step 105000; p_loss -238.1; p_norm 5046; q_loss 15.76; q_norm 5.251e+04; r_mean 2.825; dsc_mean 1; q1_target_mean 236.5; a_loss -0.001924; alpha 0.0696; 
+I1202 13:51:33.943732 139651685775168 train_eval_online.py:150] Training at 97.33 steps/s.
+I1202 13:52:09.433111 139651685775168 train_eval_online.py:167] Testing at step 105000:
+I1202 13:52:09.433319 139651685775168 train_eval_online.py:170] main: episode_mean 3194; 
+I1202 13:52:20.163829 139651685775168 agent.py:156] Step 106000; p_loss -238; p_norm 5080; q_loss 12.9; q_norm 5.27e+04; r_mean 2.821; dsc_mean 0.9922; q1_target_mean 236.5; a_loss 0.0007192; alpha 0.06677; 
+I1202 13:52:31.231404 139651685775168 agent.py:156] Step 107000; p_loss -241; p_norm 5115; q_loss 66.75; q_norm 5.289e+04; r_mean 2.68; dsc_mean 0.9922; q1_target_mean 240; a_loss 0.01716; alpha 0.06612; 
+I1202 13:52:41.226563 139651685775168 agent.py:156] Step 108000; p_loss -244; p_norm 5149; q_loss 9.916; q_norm 5.307e+04; r_mean 2.795; dsc_mean 1; q1_target_mean 243.9; a_loss -0.001953; alpha 0.06765; 
+I1202 13:52:51.212108 139651685775168 agent.py:156] Step 109000; p_loss -242.4; p_norm 5177; q_loss 28.32; q_norm 5.329e+04; r_mean 2.706; dsc_mean 0.9844; q1_target_mean 240.4; a_loss -0.001918; alpha 0.06827; 
+I1202 13:53:02.486591 139651685775168 agent.py:156] Step 110000; p_loss -238.2; p_norm 5206; q_loss 128.3; q_norm 5.347e+04; r_mean 2.904; dsc_mean 0.9922; q1_target_mean 237.8; a_loss 0.0288; alpha 0.06635; 
+I1202 13:53:02.487078 139651685775168 train_eval_online.py:150] Training at 94.25 steps/s.
+I1202 13:53:37.285466 139651685775168 train_eval_online.py:167] Testing at step 110000:
+I1202 13:53:37.285767 139651685775168 train_eval_online.py:170] main: episode_mean 3119; 
+I1202 13:53:48.646238 139651685775168 agent.py:156] Step 111000; p_loss -247.8; p_norm 5243; q_loss 8.598; q_norm 5.359e+04; r_mean 2.905; dsc_mean 1; q1_target_mean 248; a_loss 0.009295; alpha 0.06498; 
+I1202 13:54:00.647104 139651685775168 agent.py:156] Step 112000; p_loss -243.4; p_norm 5281; q_loss 21.42; q_norm 5.377e+04; r_mean 2.619; dsc_mean 0.9883; q1_target_mean 242.2; a_loss 0.0179; alpha 0.06821; 
+I1202 13:54:10.715440 139651685775168 agent.py:156] Step 113000; p_loss -245.8; p_norm 5314; q_loss 11.32; q_norm 5.394e+04; r_mean 2.763; dsc_mean 0.9922; q1_target_mean 243.7; a_loss 0.00455; alpha 0.06368; 
+I1202 13:54:20.557491 139651685775168 agent.py:156] Step 114000; p_loss -247.9; p_norm 5349; q_loss 11.7; q_norm 5.409e+04; r_mean 2.813; dsc_mean 0.9922; q1_target_mean 246; a_loss 0.01511; alpha 0.06267; 
+I1202 13:54:31.643641 139651685775168 agent.py:156] Step 115000; p_loss -248.4; p_norm 5385; q_loss 9.271; q_norm 5.426e+04; r_mean 2.694; dsc_mean 0.9922; q1_target_mean 247.8; a_loss 0.02167; alpha 0.06423; 
+I1202 13:54:31.643870 139651685775168 train_eval_online.py:150] Training at 91.98 steps/s.
+I1202 13:55:07.195828 139651685775168 train_eval_online.py:167] Testing at step 115000:
+I1202 13:55:07.196085 139651685775168 train_eval_online.py:170] main: episode_mean 3242; 
+I1202 13:55:17.707074 139651685775168 agent.py:156] Step 116000; p_loss -241.3; p_norm 5417; q_loss 25.5; q_norm 5.443e+04; r_mean 2.827; dsc_mean 0.9922; q1_target_mean 239.8; a_loss 0.006183; alpha 0.06227; 
+I1202 13:55:27.167400 139651685775168 agent.py:156] Step 117000; p_loss -250.6; p_norm 5453; q_loss 24.96; q_norm 5.463e+04; r_mean 2.865; dsc_mean 0.9922; q1_target_mean 249.7; a_loss -0.008642; alpha 0.06177; 
+I1202 13:55:37.160768 139651685775168 agent.py:156] Step 118000; p_loss -253.3; p_norm 5486; q_loss 9.588; q_norm 5.482e+04; r_mean 2.763; dsc_mean 0.9961; q1_target_mean 253.5; a_loss 0.01942; alpha 0.05895; 
+I1202 13:55:48.360158 139651685775168 agent.py:156] Step 119000; p_loss -254.7; p_norm 5521; q_loss 23.72; q_norm 5.498e+04; r_mean 2.767; dsc_mean 0.9883; q1_target_mean 252.9; a_loss -0.001179; alpha 0.06095; 
+I1202 13:55:59.744895 139651685775168 agent.py:156] Step 120000; p_loss -245.4; p_norm 5555; q_loss 39.97; q_norm 5.518e+04; r_mean 2.751; dsc_mean 0.9961; q1_target_mean 244.6; a_loss 0.01198; alpha 0.0599; 
+I1202 13:55:59.745166 139651685775168 train_eval_online.py:150] Training at 95.15 steps/s.
+I1202 13:56:34.780057 139651685775168 train_eval_online.py:167] Testing at step 120000:
+I1202 13:56:34.780295 139651685775168 train_eval_online.py:170] main: episode_mean 3310; 
+I1202 13:56:44.999089 139651685775168 agent.py:156] Step 121000; p_loss -253.7; p_norm 5588; q_loss 12.51; q_norm 5.538e+04; r_mean 2.665; dsc_mean 0.9883; q1_target_mean 251.8; a_loss -0.0006552; alpha 0.06104; 
+I1202 13:56:54.999639 139651685775168 agent.py:156] Step 122000; p_loss -250.1; p_norm 5622; q_loss 8.564; q_norm 5.556e+04; r_mean 2.775; dsc_mean 0.9961; q1_target_mean 249.2; a_loss 0.0008958; alpha 0.05879; 
+I1202 13:57:05.950508 139651685775168 agent.py:156] Step 123000; p_loss -250.8; p_norm 5659; q_loss 6.567; q_norm 5.577e+04; r_mean 2.847; dsc_mean 0.9961; q1_target_mean 249.5; a_loss -0.02193; alpha 0.06061; 
+I1202 13:57:17.138564 139651685775168 agent.py:156] Step 124000; p_loss -244.9; p_norm 5694; q_loss 11.63; q_norm 5.59e+04; r_mean 2.769; dsc_mean 0.9961; q1_target_mean 243.5; a_loss -0.001092; alpha 0.05692; 
+I1202 13:57:27.986870 139651685775168 agent.py:156] Step 125000; p_loss -245.4; p_norm 5730; q_loss 13.1; q_norm 5.605e+04; r_mean 2.772; dsc_mean 0.9883; q1_target_mean 242.8; a_loss -0.00832; alpha 0.05731; 
+I1202 13:57:27.987079 139651685775168 train_eval_online.py:150] Training at 93.97 steps/s.
+I1202 13:58:02.912153 139651685775168 train_eval_online.py:167] Testing at step 125000:
+I1202 13:58:02.912343 139651685775168 train_eval_online.py:170] main: episode_mean 3314; 
+I1202 13:58:12.944384 139651685775168 agent.py:156] Step 126000; p_loss -253.6; p_norm 5766; q_loss 17.62; q_norm 5.622e+04; r_mean 2.842; dsc_mean 0.9922; q1_target_mean 253.4; a_loss 0.00979; alpha 0.05615; 
+I1202 13:58:21.692113 139651685775168 agent.py:156] Step 127000; p_loss -257.5; p_norm 5797; q_loss 23.97; q_norm 5.642e+04; r_mean 2.868; dsc_mean 0.9883; q1_target_mean 255.1; a_loss -0.01948; alpha 0.05818; 
+I1202 13:58:32.921560 139651685775168 agent.py:156] Step 128000; p_loss -246.6; p_norm 5830; q_loss 11.43; q_norm 5.666e+04; r_mean 2.908; dsc_mean 0.9922; q1_target_mean 244.7; a_loss 0.004949; alpha 0.05619; 
+I1202 13:58:44.303390 139651685775168 agent.py:156] Step 129000; p_loss -259.3; p_norm 5859; q_loss 6.905; q_norm 5.683e+04; r_mean 2.793; dsc_mean 0.9922; q1_target_mean 259.2; a_loss 0.005647; alpha 0.05724; 
+I1202 13:58:55.664583 139651685775168 agent.py:156] Step 130000; p_loss -249; p_norm 5890; q_loss 9.035; q_norm 5.699e+04; r_mean 2.754; dsc_mean 0.9922; q1_target_mean 247.9; a_loss -0.00142; alpha 0.05811; 
+I1202 13:58:55.664897 139651685775168 train_eval_online.py:150] Training at 94.78 steps/s.
+I1202 13:59:24.072195 139651685775168 train_eval_online.py:167] Testing at step 130000:
+I1202 13:59:24.072463 139651685775168 train_eval_online.py:170] main: episode_mean 2753; 
+I1202 13:59:34.098245 139651685775168 agent.py:156] Step 131000; p_loss -256.5; p_norm 5924; q_loss 10.18; q_norm 5.716e+04; r_mean 2.902; dsc_mean 1; q1_target_mean 255.4; a_loss -0.01603; alpha 0.05713; 
+I1202 13:59:44.136230 139651685775168 agent.py:156] Step 132000; p_loss -251.2; p_norm 5955; q_loss 6.745; q_norm 5.738e+04; r_mean 2.851; dsc_mean 1; q1_target_mean 250; a_loss -0.003746; alpha 0.05722; 
+I1202 13:59:54.280426 139651685775168 agent.py:156] Step 133000; p_loss -253.9; p_norm 5986; q_loss 12.05; q_norm 5.754e+04; r_mean 2.867; dsc_mean 0.9922; q1_target_mean 252.1; a_loss -0.01862; alpha 0.05566; 
+I1202 14:00:05.644844 139651685775168 agent.py:156] Step 134000; p_loss -254.2; p_norm 6027; q_loss 62.41; q_norm 5.766e+04; r_mean 2.873; dsc_mean 0.9961; q1_target_mean 253.9; a_loss -0.003661; alpha 0.05447; 
+I1202 14:00:16.931243 139651685775168 agent.py:156] Step 135000; p_loss -256.2; p_norm 6063; q_loss 44.48; q_norm 5.782e+04; r_mean 2.767; dsc_mean 1; q1_target_mean 254.2; a_loss 0.007541; alpha 0.05601; 
+I1202 14:00:16.931595 139651685775168 train_eval_online.py:150] Training at 94.59 steps/s.
+I1202 14:00:54.271465 139651685775168 train_eval_online.py:167] Testing at step 135000:
+I1202 14:00:54.271690 139651685775168 train_eval_online.py:170] main: episode_mean 3299; 
+I1202 14:01:04.279844 139651685775168 agent.py:156] Step 136000; p_loss -257.1; p_norm 6094; q_loss 12.6; q_norm 5.805e+04; r_mean 2.894; dsc_mean 0.9922; q1_target_mean 256.2; a_loss 0.009207; alpha 0.05978; 
+I1202 14:01:14.279149 139651685775168 agent.py:156] Step 137000; p_loss -259.5; p_norm 6123; q_loss 11.14; q_norm 5.822e+04; r_mean 2.762; dsc_mean 1; q1_target_mean 259.8; a_loss 0.02666; alpha 0.05932; 
+I1202 14:01:23.746398 139651685775168 agent.py:156] Step 138000; p_loss -266.3; p_norm 6152; q_loss 70.24; q_norm 5.837e+04; r_mean 2.866; dsc_mean 1; q1_target_mean 264.6; a_loss 0.01121; alpha 0.05613; 
+I1202 14:01:35.116791 139651685775168 agent.py:156] Step 139000; p_loss -260.4; p_norm 6188; q_loss 17.55; q_norm 5.849e+04; r_mean 2.816; dsc_mean 1; q1_target_mean 260.2; a_loss -0.01505; alpha 0.05554; 
+I1202 14:01:46.498389 139651685775168 agent.py:156] Step 140000; p_loss -254.7; p_norm 6223; q_loss 9.471; q_norm 5.87e+04; r_mean 3.016; dsc_mean 0.9922; q1_target_mean 252.7; a_loss -0.004482; alpha 0.05711; 
+I1202 14:01:46.498588 139651685775168 train_eval_online.py:150] Training at 95.74 steps/s.
+I1202 14:02:21.272946 139651685775168 train_eval_online.py:167] Testing at step 140000:
+I1202 14:02:21.273159 139651685775168 train_eval_online.py:170] main: episode_mean 3262; 
+I1202 14:02:30.622040 139651685775168 agent.py:156] Step 141000; p_loss -260.9; p_norm 6254; q_loss 5.872; q_norm 5.88e+04; r_mean 2.86; dsc_mean 0.9961; q1_target_mean 261; a_loss 0.01025; alpha 0.05783; 
+I1202 14:02:40.645411 139651685775168 agent.py:156] Step 142000; p_loss -255.4; p_norm 6286; q_loss 27.97; q_norm 5.899e+04; r_mean 2.849; dsc_mean 0.9922; q1_target_mean 253.2; a_loss 0.01564; alpha 0.05578; 
+I1202 14:02:51.384891 139651685775168 agent.py:156] Step 143000; p_loss -251.5; p_norm 6315; q_loss 5.833; q_norm 5.917e+04; r_mean 2.893; dsc_mean 0.9922; q1_target_mean 250.9; a_loss -0.01124; alpha 0.05542; 
+I1202 14:03:02.877370 139651685775168 agent.py:156] Step 144000; p_loss -258.5; p_norm 6345; q_loss 16.71; q_norm 5.934e+04; r_mean 2.868; dsc_mean 0.9961; q1_target_mean 258.1; a_loss 0.01201; alpha 0.05445; 
+I1202 14:03:14.268133 139651685775168 agent.py:156] Step 145000; p_loss -254.8; p_norm 6378; q_loss 27.58; q_norm 5.95e+04; r_mean 2.871; dsc_mean 0.9922; q1_target_mean 253.6; a_loss 0.005959; alpha 0.05713; 
+I1202 14:03:14.268452 139651685775168 train_eval_online.py:150] Training at 94.35 steps/s.
+I1202 14:03:48.161021 139651685775168 train_eval_online.py:167] Testing at step 145000:
+I1202 14:03:48.161256 139651685775168 train_eval_online.py:170] main: episode_mean 3279; 
+I1202 14:03:58.184925 139651685775168 agent.py:156] Step 146000; p_loss -256.3; p_norm 6412; q_loss 6.306; q_norm 5.965e+04; r_mean 2.933; dsc_mean 0.9961; q1_target_mean 256.4; a_loss 0.005946; alpha 0.05516; 
+I1202 14:04:08.253269 139651685775168 agent.py:156] Step 147000; p_loss -256.8; p_norm 6445; q_loss 14.24; q_norm 5.981e+04; r_mean 2.883; dsc_mean 0.9922; q1_target_mean 256.5; a_loss -0.01253; alpha 0.05737; 
+I1202 14:04:18.319744 139651685775168 agent.py:156] Step 148000; p_loss -257.3; p_norm 6477; q_loss 9.053; q_norm 5.999e+04; r_mean 2.866; dsc_mean 0.9961; q1_target_mean 256.8; a_loss 0.001752; alpha 0.05638; 
+I1202 14:04:29.122017 139651685775168 agent.py:156] Step 149000; p_loss -263.1; p_norm 6507; q_loss 14.69; q_norm 6.015e+04; r_mean 2.917; dsc_mean 1; q1_target_mean 260.6; a_loss -0.0009877; alpha 0.05612; 
+I1202 14:04:40.487530 139651685775168 agent.py:156] Step 150000; p_loss -266.6; p_norm 6535; q_loss 12.34; q_norm 6.031e+04; r_mean 2.826; dsc_mean 0.9961; q1_target_mean 266.3; a_loss 0.005416; alpha 0.05726; 
+I1202 14:04:40.487791 139651685775168 train_eval_online.py:150] Training at 95.56 steps/s.
+I1202 14:05:16.128044 139651685775168 train_eval_online.py:167] Testing at step 150000:
+I1202 14:05:16.128343 139651685775168 train_eval_online.py:170] main: episode_mean 3275; 
+I1202 14:05:25.192345 139651685775168 agent.py:156] Step 151000; p_loss -267.6; p_norm 6569; q_loss 10.31; q_norm 6.044e+04; r_mean 2.829; dsc_mean 1; q1_target_mean 267.2; a_loss 0.01216; alpha 0.05622; 
+I1202 14:05:35.208604 139651685775168 agent.py:156] Step 152000; p_loss -263.2; p_norm 6601; q_loss 14.19; q_norm 6.053e+04; r_mean 3.008; dsc_mean 1; q1_target_mean 262; a_loss -0.0082; alpha 0.05481; 
+I1202 14:05:45.246191 139651685775168 agent.py:156] Step 153000; p_loss -259; p_norm 6637; q_loss 10.58; q_norm 6.072e+04; r_mean 2.957; dsc_mean 0.9922; q1_target_mean 257.9; a_loss -0.01539; alpha 0.05451; 
+I1202 14:05:55.574880 139651685775168 agent.py:156] Step 154000; p_loss -256; p_norm 6673; q_loss 64.96; q_norm 6.083e+04; r_mean 2.948; dsc_mean 0.9922; q1_target_mean 254.6; a_loss -0.01081; alpha 0.0567; 
+I1202 14:06:07.010340 139651685775168 agent.py:156] Step 155000; p_loss -260.4; p_norm 6698; q_loss 12.26; q_norm 6.098e+04; r_mean 2.84; dsc_mean 0.9922; q1_target_mean 258.6; a_loss 0.004965; alpha 0.05543; 
+I1202 14:06:07.010799 139651685775168 train_eval_online.py:150] Training at 98.27 steps/s.
+I1202 14:06:39.836332 139651685775168 train_eval_online.py:167] Testing at step 155000:
+I1202 14:06:39.836682 139651685775168 train_eval_online.py:170] main: episode_mean 3195; 
+I1202 14:06:51.094374 139651685775168 agent.py:156] Step 156000; p_loss -269.4; p_norm 6729; q_loss 8.328; q_norm 6.111e+04; r_mean 3.036; dsc_mean 1; q1_target_mean 268.6; a_loss -0.004938; alpha 0.05282; 
+I1202 14:07:01.163264 139651685775168 agent.py:156] Step 157000; p_loss -266.2; p_norm 6762; q_loss 6.784; q_norm 6.126e+04; r_mean 2.893; dsc_mean 1; q1_target_mean 265.5; a_loss 1.418e-05; alpha 0.0528; 
+I1202 14:07:11.213172 139651685775168 agent.py:156] Step 158000; p_loss -261.6; p_norm 6794; q_loss 13.09; q_norm 6.141e+04; r_mean 2.85; dsc_mean 1; q1_target_mean 260.7; a_loss -0.003343; alpha 0.05273; 
+I1202 14:07:21.935097 139651685775168 agent.py:156] Step 159000; p_loss -270.2; p_norm 6826; q_loss 29.28; q_norm 6.156e+04; r_mean 2.98; dsc_mean 0.9961; q1_target_mean 269.4; a_loss 0.01831; alpha 0.05145; 
+I1202 14:07:32.238219 139651685775168 agent.py:156] Step 160000; p_loss -258.6; p_norm 6859; q_loss 10.4; q_norm 6.171e+04; r_mean 2.907; dsc_mean 0.9961; q1_target_mean 257.9; a_loss -0.01981; alpha 0.05037; 
+I1202 14:07:32.238594 139651685775168 train_eval_online.py:150] Training at 95.42 steps/s.
+I1202 14:07:49.528106 139651685775168 train_eval_online.py:167] Testing at step 160000:
+I1202 14:07:49.528418 139651685775168 train_eval_online.py:170] main: episode_mean 1352; 
+I1202 14:08:00.995438 139651685775168 agent.py:156] Step 161000; p_loss -262.1; p_norm 6890; q_loss 13.03; q_norm 6.181e+04; r_mean 2.896; dsc_mean 0.9961; q1_target_mean 260.4; a_loss 0.01278; alpha 0.05176; 
+I1202 14:08:12.448637 139651685775168 agent.py:156] Step 162000; p_loss -272; p_norm 6924; q_loss 18.6; q_norm 6.192e+04; r_mean 2.936; dsc_mean 0.9922; q1_target_mean 270.9; a_loss 0.004438; alpha 0.05351; 
+I1202 14:08:22.953322 139651685775168 agent.py:156] Step 163000; p_loss -263.1; p_norm 6957; q_loss 8.271; q_norm 6.204e+04; r_mean 2.881; dsc_mean 0.9883; q1_target_mean 262.3; a_loss -0.002281; alpha 0.05048; 
+I1202 14:08:32.406213 139651685775168 agent.py:156] Step 164000; p_loss -253.7; p_norm 6987; q_loss 30.27; q_norm 6.217e+04; r_mean 2.893; dsc_mean 0.9961; q1_target_mean 254.6; a_loss 0.003484; alpha 0.05015; 
+I1202 14:08:41.899631 139651685775168 agent.py:156] Step 165000; p_loss -266.6; p_norm 7021; q_loss 10.3; q_norm 6.232e+04; r_mean 3.053; dsc_mean 0.9961; q1_target_mean 266.8; a_loss 0.01392; alpha 0.05139; 
+I1202 14:08:41.899897 139651685775168 train_eval_online.py:150] Training at 95.47 steps/s.
+I1202 14:09:17.332612 139651685775168 train_eval_online.py:167] Testing at step 165000:
+I1202 14:09:17.332828 139651685775168 train_eval_online.py:170] main: episode_mean 3259; 
+I1202 14:09:28.638822 139651685775168 agent.py:156] Step 166000; p_loss -266.9; p_norm 7050; q_loss 12.58; q_norm 6.253e+04; r_mean 2.911; dsc_mean 1; q1_target_mean 266.6; a_loss -0.008445; alpha 0.05125; 
+I1202 14:09:38.716534 139651685775168 agent.py:156] Step 167000; p_loss -257.3; p_norm 7081; q_loss 5.798; q_norm 6.263e+04; r_mean 2.942; dsc_mean 0.9961; q1_target_mean 256.7; a_loss -0.01178; alpha 0.05231; 
+I1202 14:09:48.966381 139651685775168 agent.py:156] Step 168000; p_loss -261.8; p_norm 7111; q_loss 6.555; q_norm 6.274e+04; r_mean 2.911; dsc_mean 0.9961; q1_target_mean 260.9; a_loss -0.003268; alpha 0.0499; 
+I1202 14:09:59.042792 139651685775168 agent.py:156] Step 169000; p_loss -257; p_norm 7136; q_loss 61; q_norm 6.282e+04; r_mean 2.966; dsc_mean 0.9961; q1_target_mean 256.8; a_loss -0.0179; alpha 0.04986; 
+I1202 14:10:09.105519 139651685775168 agent.py:156] Step 170000; p_loss -258.5; p_norm 7170; q_loss 29.67; q_norm 6.295e+04; r_mean 2.973; dsc_mean 0.9961; q1_target_mean 257.3; a_loss -0.02739; alpha 0.04845; 
+I1202 14:10:09.105741 139651685775168 train_eval_online.py:150] Training at 96.58 steps/s.
+I1202 14:10:28.801846 139651685775168 train_eval_online.py:167] Testing at step 170000:
+I1202 14:10:28.802089 139651685775168 train_eval_online.py:170] main: episode_mean 1939; 
+I1202 14:10:39.046643 139651685775168 agent.py:156] Step 171000; p_loss -265.5; p_norm 7203; q_loss 21.27; q_norm 6.307e+04; r_mean 2.927; dsc_mean 0.9961; q1_target_mean 263.9; a_loss 0.005633; alpha 0.04977; 
+I1202 14:10:50.432641 139651685775168 agent.py:156] Step 172000; p_loss -267.4; p_norm 7236; q_loss 11.38; q_norm 6.319e+04; r_mean 2.983; dsc_mean 1; q1_target_mean 266.4; a_loss -0.009179; alpha 0.04795; 
+I1202 14:11:01.848673 139651685775168 agent.py:156] Step 173000; p_loss -267.1; p_norm 7267; q_loss 6.408; q_norm 6.333e+04; r_mean 2.977; dsc_mean 0.9922; q1_target_mean 266.6; a_loss 0.01904; alpha 0.04837; 
+I1202 14:11:13.317632 139651685775168 agent.py:156] Step 174000; p_loss -262.4; p_norm 7299; q_loss 22.03; q_norm 6.343e+04; r_mean 2.978; dsc_mean 0.9961; q1_target_mean 261.2; a_loss -0.003473; alpha 0.0496; 
+I1202 14:11:23.658987 139651685775168 agent.py:156] Step 175000; p_loss -259.8; p_norm 7328; q_loss 16.68; q_norm 6.352e+04; r_mean 3.027; dsc_mean 0.9961; q1_target_mean 257.9; a_loss -0.006036; alpha 0.04616; 
+I1202 14:11:23.659189 139651685775168 train_eval_online.py:150] Training at 91.15 steps/s.
+I1202 14:11:52.529214 139651685775168 train_eval_online.py:167] Testing at step 175000:
+I1202 14:11:52.529436 139651685775168 train_eval_online.py:170] main: episode_mean 3177; 
+I1202 14:12:03.982335 139651685775168 agent.py:156] Step 176000; p_loss -260.3; p_norm 7360; q_loss 11.38; q_norm 6.36e+04; r_mean 2.991; dsc_mean 0.9961; q1_target_mean 260.2; a_loss -0.004903; alpha 0.04658; 
+I1202 14:12:15.434672 139651685775168 agent.py:156] Step 177000; p_loss -269.8; p_norm 7392; q_loss 6.463; q_norm 6.364e+04; r_mean 2.966; dsc_mean 1; q1_target_mean 269.4; a_loss 0.00353; alpha 0.04834; 
+I1202 14:12:26.828530 139651685775168 agent.py:156] Step 178000; p_loss -266.8; p_norm 7422; q_loss 14.96; q_norm 6.379e+04; r_mean 3.005; dsc_mean 0.9961; q1_target_mean 267; a_loss 0.005447; alpha 0.04655; 
+I1202 14:12:38.302443 139651685775168 agent.py:156] Step 179000; p_loss -266; p_norm 7452; q_loss 9.421; q_norm 6.387e+04; r_mean 2.87; dsc_mean 0.9961; q1_target_mean 266.1; a_loss -0.01142; alpha 0.0475; 
+I1202 14:12:48.589358 139651685775168 agent.py:156] Step 180000; p_loss -266; p_norm 7483; q_loss 4.164; q_norm 6.396e+04; r_mean 3.081; dsc_mean 1; q1_target_mean 265.4; a_loss 0.004758; alpha 0.04801; 
+I1202 14:12:48.589654 139651685775168 train_eval_online.py:150] Training at 89.19 steps/s.
+I1202 14:13:19.060388 139651685775168 train_eval_online.py:167] Testing at step 180000:
+I1202 14:13:19.060610 139651685775168 train_eval_online.py:170] main: episode_mean 3145; 
+I1202 14:13:30.509392 139651685775168 agent.py:156] Step 181000; p_loss -264.9; p_norm 7509; q_loss 4.744; q_norm 6.403e+04; r_mean 3.123; dsc_mean 0.9961; q1_target_mean 264.6; a_loss -0.004533; alpha 0.04826; 
+I1202 14:13:41.889793 139651685775168 agent.py:156] Step 182000; p_loss -262.6; p_norm 7540; q_loss 17.52; q_norm 6.408e+04; r_mean 2.997; dsc_mean 0.9961; q1_target_mean 262.1; a_loss -0.01857; alpha 0.04824; 
+I1202 14:13:53.377197 139651685775168 agent.py:156] Step 183000; p_loss -264; p_norm 7569; q_loss 5.728; q_norm 6.42e+04; r_mean 3.031; dsc_mean 0.9961; q1_target_mean 263.6; a_loss -0.005198; alpha 0.04719; 
+I1202 14:14:03.624476 139651685775168 agent.py:156] Step 184000; p_loss -263.2; p_norm 7596; q_loss 6.717; q_norm 6.427e+04; r_mean 2.955; dsc_mean 0.9922; q1_target_mean 261.6; a_loss -0.0066; alpha 0.04605; 
+I1202 14:14:13.863196 139651685775168 agent.py:156] Step 185000; p_loss -271.8; p_norm 7622; q_loss 5.977; q_norm 6.438e+04; r_mean 2.959; dsc_mean 0.9961; q1_target_mean 271.9; a_loss -0.008494; alpha 0.04592; 
+I1202 14:14:13.863387 139651685775168 train_eval_online.py:150] Training at 91.24 steps/s.
+I1202 14:14:35.366805 139651685775168 train_eval_online.py:167] Testing at step 185000:
+I1202 14:14:35.367017 139651685775168 train_eval_online.py:170] main: episode_mean 2255; 
+I1202 14:14:45.803849 139651685775168 agent.py:156] Step 186000; p_loss -264.6; p_norm 7644; q_loss 7.877; q_norm 6.448e+04; r_mean 3.025; dsc_mean 0.9922; q1_target_mean 264.3; a_loss -0.001402; alpha 0.04566; 
+I1202 14:14:57.305341 139651685775168 agent.py:156] Step 187000; p_loss -260.6; p_norm 7674; q_loss 6.276; q_norm 6.458e+04; r_mean 2.972; dsc_mean 0.9922; q1_target_mean 259; a_loss -0.004508; alpha 0.04552; 
+I1202 14:15:07.944509 139651685775168 agent.py:156] Step 188000; p_loss -269; p_norm 7704; q_loss 13.57; q_norm 6.466e+04; r_mean 3.044; dsc_mean 1; q1_target_mean 268; a_loss 0.006058; alpha 0.04477; 
+I1202 14:15:18.075651 139651685775168 agent.py:156] Step 189000; p_loss -267.6; p_norm 7733; q_loss 4.833; q_norm 6.475e+04; r_mean 3.006; dsc_mean 0.9922; q1_target_mean 267; a_loss 0.002784; alpha 0.04631; 
+I1202 14:15:29.252992 139651685775168 agent.py:156] Step 190000; p_loss -264.3; p_norm 7758; q_loss 5.936; q_norm 6.483e+04; r_mean 3.115; dsc_mean 0.9961; q1_target_mean 264.5; a_loss -0.009277; alpha 0.04691; 
+I1202 14:15:29.253198 139651685775168 train_eval_online.py:150] Training at 92.79 steps/s.
+I1202 14:16:01.979413 139651685775168 train_eval_online.py:167] Testing at step 190000:
+I1202 14:16:01.979610 139651685775168 train_eval_online.py:170] main: episode_mean 3247; 
+I1202 14:16:11.683698 139651685775168 agent.py:156] Step 191000; p_loss -265.4; p_norm 7781; q_loss 6.348; q_norm 6.495e+04; r_mean 3.054; dsc_mean 0.9883; q1_target_mean 264.7; a_loss -0.01721; alpha 0.04732; 
+I1202 14:16:20.367346 139651685775168 agent.py:156] Step 192000; p_loss -269.8; p_norm 7803; q_loss 9.592; q_norm 6.512e+04; r_mean 3.006; dsc_mean 1; q1_target_mean 270.1; a_loss -0.008904; alpha 0.04669; 
+I1202 14:16:30.357900 139651685775168 agent.py:156] Step 193000; p_loss -273.4; p_norm 7830; q_loss 9.803; q_norm 6.522e+04; r_mean 3.146; dsc_mean 1; q1_target_mean 272.7; a_loss 0.004334; alpha 0.0465; 
+I1202 14:16:41.861419 139651685775168 agent.py:156] Step 194000; p_loss -270.1; p_norm 7857; q_loss 5.02; q_norm 6.534e+04; r_mean 2.976; dsc_mean 0.9922; q1_target_mean 269.9; a_loss -0.004091; alpha 0.04634; 
+I1202 14:16:53.272906 139651685775168 agent.py:156] Step 195000; p_loss -270.8; p_norm 7890; q_loss 5.574; q_norm 6.547e+04; r_mean 3.006; dsc_mean 0.9961; q1_target_mean 271; a_loss 0.003843; alpha 0.04217; 
+I1202 14:16:53.273209 139651685775168 train_eval_online.py:150] Training at 97.48 steps/s.
+I1202 14:17:25.365275 139651685775168 train_eval_online.py:167] Testing at step 195000:
+I1202 14:17:25.365483 139651685775168 train_eval_online.py:170] main: episode_mean 2713; 
+I1202 14:17:34.050142 139651685775168 agent.py:156] Step 196000; p_loss -275.1; p_norm 7915; q_loss 8.566; q_norm 6.56e+04; r_mean 3.043; dsc_mean 0.9961; q1_target_mean 274.8; a_loss -0.01285; alpha 0.0432; 
+I1202 14:17:43.475040 139651685775168 agent.py:156] Step 197000; p_loss -270.6; p_norm 7941; q_loss 6.454; q_norm 6.569e+04; r_mean 3.04; dsc_mean 1; q1_target_mean 270; a_loss 0.002376; alpha 0.04444; 
+I1202 14:17:53.536202 139651685775168 agent.py:156] Step 198000; p_loss -270.8; p_norm 7969; q_loss 55.99; q_norm 6.578e+04; r_mean 2.966; dsc_mean 1; q1_target_mean 270.7; a_loss 2.021e-05; alpha 0.04535; 
+I1202 14:18:04.974121 139651685775168 agent.py:156] Step 199000; p_loss -269.2; p_norm 7994; q_loss 15.38; q_norm 6.586e+04; r_mean 2.965; dsc_mean 0.9961; q1_target_mean 268.6; a_loss -0.002021; alpha 0.04445; 
+I1202 14:18:16.367454 139651685775168 agent.py:156] Step 200000; p_loss -273.8; p_norm 8027; q_loss 8.102; q_norm 6.601e+04; r_mean 3.115; dsc_mean 0.9961; q1_target_mean 273.8; a_loss -0.004874; alpha 0.04537; 
+I1202 14:18:16.367772 139651685775168 train_eval_online.py:150] Training at 98.04 steps/s.
+I1202 14:18:49.944038 139651685775168 train_eval_online.py:167] Testing at step 200000:
+I1202 14:18:49.944238 139651685775168 train_eval_online.py:170] main: episode_mean 3299; 
+I1202 14:18:59.610167 139651685775168 agent.py:156] Step 201000; p_loss -265.7; p_norm 8053; q_loss 7.156; q_norm 6.61e+04; r_mean 3.057; dsc_mean 1; q1_target_mean 265.9; a_loss 0.00204; alpha 0.04536; 
+I1202 14:19:09.658072 139651685775168 agent.py:156] Step 202000; p_loss -258.3; p_norm 8076; q_loss 5.996; q_norm 6.618e+04; r_mean 3.095; dsc_mean 0.9922; q1_target_mean 257.7; a_loss -0.008847; alpha 0.04483; 
+I1202 14:19:19.699093 139651685775168 agent.py:156] Step 203000; p_loss -276.6; p_norm 8099; q_loss 12.34; q_norm 6.627e+04; r_mean 2.942; dsc_mean 1; q1_target_mean 276.3; a_loss -0.004245; alpha 0.04417; 
+I1202 14:19:30.737934 139651685775168 agent.py:156] Step 204000; p_loss -266.8; p_norm 8124; q_loss 7.686; q_norm 6.638e+04; r_mean 3.024; dsc_mean 0.9922; q1_target_mean 266.1; a_loss -0.001753; alpha 0.04434; 
+I1202 14:19:42.187940 139651685775168 agent.py:156] Step 205000; p_loss -260.6; p_norm 8150; q_loss 9.211; q_norm 6.649e+04; r_mean 3.075; dsc_mean 0.9961; q1_target_mean 260.2; a_loss -0.01003; alpha 0.04402; 
+I1202 14:19:42.188167 139651685775168 train_eval_online.py:150] Training at 95.71 steps/s.
+I1202 14:20:15.729134 139651685775168 train_eval_online.py:167] Testing at step 205000:
+I1202 14:20:15.729357 139651685775168 train_eval_online.py:170] main: episode_mean 3271; 
+I1202 14:20:26.239420 139651685775168 agent.py:156] Step 206000; p_loss -268.1; p_norm 8179; q_loss 18.2; q_norm 6.66e+04; r_mean 2.948; dsc_mean 0.9883; q1_target_mean 267.2; a_loss 0.001161; alpha 0.04329; 
+I1202 14:20:36.285731 139651685775168 agent.py:156] Step 207000; p_loss -269.6; p_norm 8210; q_loss 7.929; q_norm 6.671e+04; r_mean 3.074; dsc_mean 0.9961; q1_target_mean 269.2; a_loss 0.008636; alpha 0.04398; 
+I1202 14:20:46.348046 139651685775168 agent.py:156] Step 208000; p_loss -268.2; p_norm 8233; q_loss 11.15; q_norm 6.687e+04; r_mean 3.088; dsc_mean 0.9961; q1_target_mean 267.8; a_loss -0.001969; alpha 0.04256; 
+I1202 14:20:56.511158 139651685775168 agent.py:156] Step 209000; p_loss -274.5; p_norm 8259; q_loss 9.566; q_norm 6.696e+04; r_mean 3.027; dsc_mean 0.9961; q1_target_mean 273.9; a_loss 0.001273; alpha 0.04338; 
+I1202 14:21:06.724762 139651685775168 agent.py:156] Step 210000; p_loss -274.4; p_norm 8288; q_loss 5.75; q_norm 6.707e+04; r_mean 3.068; dsc_mean 0.9961; q1_target_mean 274.6; a_loss -0.004927; alpha 0.04344; 
+I1202 14:21:06.725024 139651685775168 train_eval_online.py:150] Training at 98.05 steps/s.
+I1202 14:21:41.433947 139651685775168 train_eval_online.py:167] Testing at step 210000:
+I1202 14:21:41.434143 139651685775168 train_eval_online.py:170] main: episode_mean 3304; 
+I1202 14:21:52.563962 139651685775168 agent.py:156] Step 211000; p_loss -278.3; p_norm 8314; q_loss 7.421; q_norm 6.717e+04; r_mean 3.055; dsc_mean 1; q1_target_mean 278; a_loss -0.0029; alpha 0.04385; 
+I1202 14:22:02.691715 139651685775168 agent.py:156] Step 212000; p_loss -274.2; p_norm 8337; q_loss 5.33; q_norm 6.725e+04; r_mean 3.092; dsc_mean 1; q1_target_mean 273.4; a_loss 0.002749; alpha 0.04411; 
+I1202 14:22:12.075993 139651685775168 agent.py:156] Step 213000; p_loss -274.5; p_norm 8365; q_loss 5.318; q_norm 6.734e+04; r_mean 2.911; dsc_mean 0.9961; q1_target_mean 274.7; a_loss 0.008859; alpha 0.04275; 
+I1202 14:22:21.333774 139651685775168 agent.py:156] Step 214000; p_loss -274.7; p_norm 8397; q_loss 5.852; q_norm 6.75e+04; r_mean 3.108; dsc_mean 0.9922; q1_target_mean 273.7; a_loss 0.00024; alpha 0.04257; 
+I1202 14:22:31.486115 139651685775168 agent.py:156] Step 215000; p_loss -273.2; p_norm 8423; q_loss 9.863; q_norm 6.757e+04; r_mean 3.008; dsc_mean 1; q1_target_mean 272.2; a_loss -0.00457; alpha 0.04358; 
+I1202 14:22:31.486312 139651685775168 train_eval_online.py:150] Training at 99.9 steps/s.
+I1202 14:22:47.174057 139651685775168 train_eval_online.py:167] Testing at step 215000:
+I1202 14:22:47.174402 139651685775168 train_eval_online.py:170] main: episode_mean 1563; 
+I1202 14:22:58.962412 139651685775168 agent.py:156] Step 216000; p_loss -268.8; p_norm 8445; q_loss 9.755; q_norm 6.766e+04; r_mean 3.003; dsc_mean 0.9961; q1_target_mean 267.9; a_loss -0.0007802; alpha 0.04284; 
+I1202 14:23:10.420276 139651685775168 agent.py:156] Step 217000; p_loss -269.9; p_norm 8469; q_loss 4.9; q_norm 6.776e+04; r_mean 3.084; dsc_mean 1; q1_target_mean 269.6; a_loss -0.0003694; alpha 0.04146; 
+I1202 14:23:21.109872 139651685775168 agent.py:156] Step 218000; p_loss -271.3; p_norm 8496; q_loss 4.805; q_norm 6.785e+04; r_mean 3.015; dsc_mean 1; q1_target_mean 271.9; a_loss 0.004029; alpha 0.04092; 
+I1202 14:23:31.185837 139651685775168 agent.py:156] Step 219000; p_loss -270.6; p_norm 8521; q_loss 6.841; q_norm 6.795e+04; r_mean 3.018; dsc_mean 0.9922; q1_target_mean 269.7; a_loss -0.0002767; alpha 0.04166; 
+I1202 14:23:40.057857 139651685775168 agent.py:156] Step 220000; p_loss -280.1; p_norm 8546; q_loss 12.32; q_norm 6.807e+04; r_mean 3.07; dsc_mean 1; q1_target_mean 280.1; a_loss -0.009948; alpha 0.04148; 
+I1202 14:23:40.058058 139651685775168 train_eval_online.py:150] Training at 94.55 steps/s.
+I1202 14:24:13.685919 139651685775168 train_eval_online.py:167] Testing at step 220000:
+I1202 14:24:13.686151 139651685775168 train_eval_online.py:170] main: episode_mean 3337; 
+I1202 14:24:25.114894 139651685775168 agent.py:156] Step 221000; p_loss -278.8; p_norm 8574; q_loss 10.15; q_norm 6.821e+04; r_mean 2.91; dsc_mean 1; q1_target_mean 276.8; a_loss -0.0053; alpha 0.04316; 
+I1202 14:24:36.580860 139651685775168 agent.py:156] Step 222000; p_loss -276.1; p_norm 8598; q_loss 12.64; q_norm 6.83e+04; r_mean 2.973; dsc_mean 0.9961; q1_target_mean 274.9; a_loss 0.01581; alpha 0.04205; 
+I1202 14:24:46.850043 139651685775168 agent.py:156] Step 223000; p_loss -277.2; p_norm 8624; q_loss 5.058; q_norm 6.839e+04; r_mean 3.089; dsc_mean 0.9961; q1_target_mean 277.5; a_loss 0.002785; alpha 0.04055; 
+I1202 14:24:55.885290 139651685775168 agent.py:156] Step 224000; p_loss -279.3; p_norm 8651; q_loss 8.392; q_norm 6.847e+04; r_mean 3.055; dsc_mean 1; q1_target_mean 279; a_loss -0.004146; alpha 0.04139; 
+I1202 14:25:04.903512 139651685775168 agent.py:156] Step 225000; p_loss -276.9; p_norm 8686; q_loss 4.765; q_norm 6.86e+04; r_mean 3.032; dsc_mean 1; q1_target_mean 276.7; a_loss -0.00535; alpha 0.04281; 
+I1202 14:25:04.903718 139651685775168 train_eval_online.py:150] Training at 97.62 steps/s.
+I1202 14:25:40.277147 139651685775168 train_eval_online.py:167] Testing at step 225000:
+I1202 14:25:40.277344 139651685775168 train_eval_online.py:170] main: episode_mean 3325; 
+I1202 14:25:51.778184 139651685775168 agent.py:156] Step 226000; p_loss -277.7; p_norm 8711; q_loss 3.958; q_norm 6.867e+04; r_mean 3.056; dsc_mean 1; q1_target_mean 278.1; a_loss -0.004875; alpha 0.04147; 
+I1202 14:26:02.475409 139651685775168 agent.py:156] Step 227000; p_loss -276; p_norm 8741; q_loss 9.748; q_norm 6.878e+04; r_mean 3.101; dsc_mean 1; q1_target_mean 275.4; a_loss 0.01708; alpha 0.04129; 
+I1202 14:26:11.172884 139651685775168 agent.py:156] Step 228000; p_loss -280.9; p_norm 8769; q_loss 4.37; q_norm 6.887e+04; r_mean 2.951; dsc_mean 0.9961; q1_target_mean 280; a_loss -0.004535; alpha 0.04033; 
+I1202 14:26:19.871940 139651685775168 agent.py:156] Step 229000; p_loss -273.3; p_norm 8799; q_loss 6.661; q_norm 6.898e+04; r_mean 3.039; dsc_mean 0.9883; q1_target_mean 272.9; a_loss 0.00682; alpha 0.03969; 
+I1202 14:26:29.823254 139651685775168 agent.py:156] Step 230000; p_loss -273; p_norm 8830; q_loss 15.69; q_norm 6.913e+04; r_mean 2.962; dsc_mean 0.9883; q1_target_mean 273; a_loss 0.01319; alpha 0.04053; 
+I1202 14:26:29.823462 139651685775168 train_eval_online.py:150] Training at 100.9 steps/s.
+I1202 14:27:05.345130 139651685775168 train_eval_online.py:167] Testing at step 230000:
+I1202 14:27:05.345392 139651685775168 train_eval_online.py:170] main: episode_mean 3294; 
+I1202 14:27:16.387394 139651685775168 agent.py:156] Step 231000; p_loss -279.2; p_norm 8857; q_loss 3.291; q_norm 6.921e+04; r_mean 2.991; dsc_mean 0.9961; q1_target_mean 278; a_loss 0.0007689; alpha 0.04077; 
+I1202 14:27:26.610287 139651685775168 agent.py:156] Step 232000; p_loss -270.4; p_norm 8884; q_loss 12.55; q_norm 6.928e+04; r_mean 3.141; dsc_mean 1; q1_target_mean 270.5; a_loss 0.001751; alpha 0.04046; 
+I1202 14:27:35.869932 139651685775168 agent.py:156] Step 233000; p_loss -279.6; p_norm 8912; q_loss 7.884; q_norm 6.936e+04; r_mean 3.12; dsc_mean 0.9961; q1_target_mean 279.5; a_loss 0.007821; alpha 0.03891; 
+I1202 14:27:45.931969 139651685775168 agent.py:156] Step 234000; p_loss -274.8; p_norm 8947; q_loss 53.07; q_norm 6.941e+04; r_mean 3.115; dsc_mean 0.9922; q1_target_mean 274.2; a_loss -0.002026; alpha 0.0402; 
+I1202 14:27:56.254124 139651685775168 agent.py:156] Step 235000; p_loss -280.2; p_norm 8978; q_loss 5.877; q_norm 6.948e+04; r_mean 3.076; dsc_mean 1; q1_target_mean 279.8; a_loss 0.0009948; alpha 0.03984; 
+I1202 14:27:56.254348 139651685775168 train_eval_online.py:150] Training at 98.22 steps/s.
+I1202 14:28:30.992017 139651685775168 train_eval_online.py:167] Testing at step 235000:
+I1202 14:28:30.992296 139651685775168 train_eval_online.py:170] main: episode_mean 3325; 
+I1202 14:28:41.291674 139651685775168 agent.py:156] Step 236000; p_loss -277.3; p_norm 9001; q_loss 6.32; q_norm 6.957e+04; r_mean 3.074; dsc_mean 0.9961; q1_target_mean 277; a_loss -0.0149; alpha 0.04006; 
+I1202 14:28:51.253833 139651685775168 agent.py:156] Step 237000; p_loss -278.5; p_norm 9032; q_loss 3.288; q_norm 6.968e+04; r_mean 3.09; dsc_mean 1; q1_target_mean 278.8; a_loss 0.002533; alpha 0.03912; 
+I1202 14:29:00.355724 139651685775168 agent.py:156] Step 238000; p_loss -280.3; p_norm 9058; q_loss 37.97; q_norm 6.978e+04; r_mean 3.06; dsc_mean 0.9961; q1_target_mean 280.1; a_loss -0.005854; alpha 0.03824; 
+I1202 14:29:10.340558 139651685775168 agent.py:156] Step 239000; p_loss -281.2; p_norm 9085; q_loss 5.28; q_norm 6.985e+04; r_mean 3.121; dsc_mean 0.9961; q1_target_mean 279; a_loss -0.01526; alpha 0.03787; 
+I1202 14:29:24.790982 139651685775168 agent.py:156] Step 240000; p_loss -278.5; p_norm 9109; q_loss 4.429; q_norm 6.991e+04; r_mean 3.187; dsc_mean 0.9961; q1_target_mean 277.7; a_loss -0.01422; alpha 0.03981; 
+I1202 14:29:24.791215 139651685775168 train_eval_online.py:150] Training at 92.94 steps/s.
+I1202 14:29:59.049793 139651685775168 train_eval_online.py:167] Testing at step 240000:
+I1202 14:29:59.050127 139651685775168 train_eval_online.py:170] main: episode_mean 3332; 
+I1202 14:30:09.855975 139651685775168 agent.py:156] Step 241000; p_loss -282.5; p_norm 9142; q_loss 33.87; q_norm 7.002e+04; r_mean 3.019; dsc_mean 0.9961; q1_target_mean 281.5; a_loss -0.006404; alpha 0.03854; 
+I1202 14:30:21.309513 139651685775168 agent.py:156] Step 242000; p_loss -273.3; p_norm 9173; q_loss 50.99; q_norm 7.011e+04; r_mean 3.032; dsc_mean 0.9961; q1_target_mean 272.9; a_loss 0.007294; alpha 0.03664; 
+I1202 14:30:31.363840 139651685775168 agent.py:156] Step 243000; p_loss -283.2; p_norm 9203; q_loss 10.87; q_norm 7.019e+04; r_mean 3.059; dsc_mean 0.9922; q1_target_mean 281.8; a_loss -0.01324; alpha 0.03704; 
+I1202 14:30:41.383475 139651685775168 agent.py:156] Step 244000; p_loss -275.6; p_norm 9240; q_loss 8.496; q_norm 7.025e+04; r_mean 3.035; dsc_mean 0.9922; q1_target_mean 275; a_loss 0.006056; alpha 0.03794; 
+I1202 14:30:51.419824 139651685775168 agent.py:156] Step 245000; p_loss -279.3; p_norm 9266; q_loss 93.24; q_norm 7.035e+04; r_mean 3.028; dsc_mean 0.9961; q1_target_mean 278.2; a_loss 0.00163; alpha 0.03751; 
+I1202 14:30:51.420040 139651685775168 train_eval_online.py:150] Training at 95.48 steps/s.
+I1202 14:31:22.510471 139651685775168 train_eval_online.py:167] Testing at step 245000:
+I1202 14:31:22.510892 139651685775168 train_eval_online.py:170] main: episode_mean 3141; 
+I1202 14:31:33.608123 139651685775168 agent.py:156] Step 246000; p_loss -281.3; p_norm 9297; q_loss 5.243; q_norm 7.044e+04; r_mean 3.067; dsc_mean 0.9961; q1_target_mean 280.8; a_loss 0.009435; alpha 0.03639; 
+I1202 14:31:45.046849 139651685775168 agent.py:156] Step 247000; p_loss -279.6; p_norm 9321; q_loss 5.524; q_norm 7.052e+04; r_mean 3.07; dsc_mean 0.9961; q1_target_mean 278.9; a_loss -0.003879; alpha 0.03555; 
+I1202 14:31:55.814901 139651685775168 agent.py:156] Step 248000; p_loss -285.7; p_norm 9348; q_loss 8.282; q_norm 7.06e+04; r_mean 3.045; dsc_mean 1; q1_target_mean 285.4; a_loss 0.004813; alpha 0.0363; 
+I1202 14:32:05.850728 139651685775168 agent.py:156] Step 249000; p_loss -286.5; p_norm 9380; q_loss 3.626; q_norm 7.069e+04; r_mean 3.02; dsc_mean 1; q1_target_mean 286.8; a_loss 0.01979; alpha 0.0367; 
+I1202 14:32:15.892444 139651685775168 agent.py:156] Step 250000; p_loss -282.8; p_norm 9413; q_loss 3.382; q_norm 7.078e+04; r_mean 3.099; dsc_mean 1; q1_target_mean 283; a_loss 0.009663; alpha 0.03546; 
+I1202 14:32:15.892661 139651685775168 train_eval_online.py:150] Training at 93.67 steps/s.
+I1202 14:32:47.576911 139651685775168 train_eval_online.py:167] Testing at step 250000:
+I1202 14:32:47.577129 139651685775168 train_eval_online.py:170] main: episode_mean 3280; 
+I1202 14:32:47.788734 139651685775168 train_eval_online.py:181] Training finished, time cost 3860s.
+action_shape: [3]
+action_shape: [3]

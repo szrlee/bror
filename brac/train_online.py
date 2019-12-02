@@ -28,6 +28,10 @@ from absl import logging
 import gin
 import tensorflow as tf
 
+# suppress annoying warning
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+
 from behavior_regularized_offline_rl.brac import agents
 from behavior_regularized_offline_rl.brac import train_eval_online
 from behavior_regularized_offline_rl.brac import utils
@@ -35,7 +39,7 @@ from behavior_regularized_offline_rl.brac import utils
 tf.compat.v1.enable_v2_behavior()
 
 flags.DEFINE_string('root_dir',
-                    os.path.join(os.getenv('HOME', '/'),
+                    os.path.join('/data1/yrli',
                                  'tmp/offlinerl/policies'),
                     'Root directory for writing logs/summaries/checkpoints.')
 flags.DEFINE_string('sub_dir', '0', '')

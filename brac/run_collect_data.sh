@@ -20,7 +20,7 @@ DATA_NAME=pure_two_policies
 python collect_data.py \
   --root_dir='/data1/yrli/tmp/offlinerl/data' \
   --alsologtostderr \
-  --sub_dir=0 \
+  --sub_dir=1 \
   --env_name=HalfCheetah-v2 \
   --data_name=$DATA_NAME \
   --config_file=dcfg_$DATA_NAME \
