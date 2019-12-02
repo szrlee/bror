@@ -37,7 +37,7 @@ tf.compat.v1.enable_v2_behavior()
 
 # Flags for which data to load.
 flags.DEFINE_string('data_root_dir',
-                    os.path.join(os.getenv('HOME', '/'),
+                    os.path.join('/data1/yrli',
                                  'tmp/offlinerl/data'),
                     'Root directory for data.')
 flags.DEFINE_string('data_sub_dir', '0', '')
@@ -46,7 +46,7 @@ flags.DEFINE_string('data_file_name', 'data', 'data checkpoint file name.')
 
 # Flags for offline training.
 flags.DEFINE_string('root_dir',
-                    os.path.join(os.getenv('HOME', '/'), 'tmp/offlinerl/learn'),
+                    os.path.join('/data1/yrli', 'tmp/offlinerl/learn'),
                     'Root directory for writing logs/summaries/checkpoints.')
 flags.DEFINE_string('sub_dir', '0', '')
 flags.DEFINE_string('agent_name', 'sac', 'agent name.')

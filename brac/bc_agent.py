@@ -46,6 +46,26 @@ class Agent(agent.Agent):
     self._target_entropy = target_entropy
     super(Agent, self).__init__(**kwargs)
 
+  def _get_train_batch(self):
+    """Samples and constructs batch of transitions."""
+    batch_indices = np.random.choice(self._train_data.size, self._batch_size)
+    batch_ = self._train_data.get_batch(batch_indices)
+    transition_batch = batch_
+    # TODO: change batch structure
+    batch = dict(
+        s1=transition_batch.s1,
+        s2=transition_batch.s2,
+        r=transition_batch.reward,
+        dsc=transition_batch.discount,
+        a1=transition_batch.a1,
+        a2=transition_batch.a2,
+        a1s=transition_batch.a1s,
+        log_pi_a1s=transition_batch.log_pi_a1s,
+        a2s=transition_batch.a2s, 
+        log_pi_a2s=transition_batch.log_pi_a2s,
+        )
+    return batch
+
   def _build_fns(self):
     self._agent_module = AgentModule(modules=self._modules)
     self._p_fn = self._agent_module.p_fn
