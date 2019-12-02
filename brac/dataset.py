@@ -136,7 +136,7 @@ class DatasetWithInternalActions(tf.Module):
 
   @tf.function
   def add_transitions(self, transitions):
-    assert isinstance(transitions, Transition)
+    assert isinstance(transitions, TransitionWithInternalActions)
     batch_size = transitions.s1.shape[0]
     effective_batch_size = tf.minimum(
         batch_size, self._size - self._current_idx)
