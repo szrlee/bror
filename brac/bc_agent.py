@@ -21,6 +21,7 @@ from __future__ import print_function
 import collections
 import gin
 import tensorflow as tf
+import numpy as np
 from behavior_regularized_offline_rl.brac import agent
 from behavior_regularized_offline_rl.brac import networks
 from behavior_regularized_offline_rl.brac import policies

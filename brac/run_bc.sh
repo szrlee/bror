@@ -13,11 +13,11 @@
 # limitations under the License.
 
 #!/bin/bash
-python train_offline \
+python train_offline.py \
   --alsologtostderr --sub_dir=0 \
   --env_name=HalfCheetah-v2 \
   --agent_name=bc \
-  --data_name=example \
+  --data_name=pure_two_policies \
   --total_train_steps=300000 \
   --n_train=1000000 \
   --gin_bindings="train_eval_offline.model_params=((200, 200),)" \

@@ -1,0 +1,61 @@
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+I1203 00:17:35.363301 140059347068736 train_eval_offline.py:70] Loading data from /data1/yrli/tmp/offlinerl/data/HalfCheetah-v2/pure_two_policies/0/data ...
+2019-12-03 00:17:35.365121: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-03 00:17:35.374011: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400065000 Hz
+2019-12-03 00:17:35.376007: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5b431f0 executing computations on platform Host. Devices:
+2019-12-03 00:17:35.376026: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+I1203 00:17:35.573733 140059347068736 train_eval_offline.py:78] n_train 1000000.
+action_shape: [6]
+Traceback (most recent call last):
+  File "train_offline.py", line 104, in <module>
+    app.run(main)
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/absl/app.py", line 299, in run
+    _run_main(main, args)
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/absl/app.py", line 250, in _run_main
+    sys.exit(main(argv))
+  File "train_offline.py", line 99, in main
+    n_eval_episodes=FLAGS.n_eval_episodes,
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/gin/config.py", line 1073, in gin_wrapper
+    utils.augment_exception_message_and_reraise(e, err_str)
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/gin/utils.py", line 49, in augment_exception_message_and_reraise
+    six.raise_from(proxy.with_traceback(exception.__traceback__), None)
+  File "<string>", line 3, in raise_from
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/gin/config.py", line 1050, in gin_wrapper
+    return fn(*new_args, **new_kwargs)
+  File "/data1/yrli/behavior_regularized_offline_rl/brac/train_eval_offline.py", line 101, in train_eval_offline
+    agent = agent_module.Agent(**vars(agent_args))
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/gin/config.py", line 1073, in gin_wrapper
+    utils.augment_exception_message_and_reraise(e, err_str)
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/gin/utils.py", line 49, in augment_exception_message_and_reraise
+    six.raise_from(proxy.with_traceback(exception.__traceback__), None)
+  File "<string>", line 3, in raise_from
+  File "/data1/yrli/behavior_regularized_offline_rl/venv/lib/python3.6/site-packages/gin/config.py", line 1050, in gin_wrapper
+    return fn(*new_args, **new_kwargs)
+  File "/data1/yrli/behavior_regularized_offline_rl/brac/bc_agent.py", line 47, in __init__
+    super(Agent, self).__init__(**kwargs)
+  File "/data1/yrli/behavior_regularized_offline_rl/brac/agent.py", line 59, in __init__
+    self._build_agent()
+  File "/data1/yrli/behavior_regularized_offline_rl/brac/agent.py", line 71, in _build_agent
+    train_batch = self._get_train_batch()
+  File "/data1/yrli/behavior_regularized_offline_rl/brac/bc_agent.py", line 51, in _get_train_batch
+    batch_indices = np.random.choice(self._train_data.size, self._batch_size)
+NameError: name 'np' is not defined
+  In call to configurable 'Agent' (<class 'behavior_regularized_offline_rl.brac.bc_agent.Agent'>)
+  In call to configurable 'train_eval_offline' (<function train_eval_offline at 0x7f61f8844048>)
+WARNING:tensorflow:Unresolved object in checkpoint: (root).data._a1s
+W1203 00:17:35.810781 140059347068736 util.py:244] Unresolved object in checkpoint: (root).data._a1s
+WARNING:tensorflow:Unresolved object in checkpoint: (root).data._log_pi_a1s
+W1203 00:17:35.810995 140059347068736 util.py:244] Unresolved object in checkpoint: (root).data._log_pi_a1s
+WARNING:tensorflow:Unresolved object in checkpoint: (root).data._a2s
+W1203 00:17:35.811081 140059347068736 util.py:244] Unresolved object in checkpoint: (root).data._a2s
+WARNING:tensorflow:Unresolved object in checkpoint: (root).data._log_pi_a2s
+W1203 00:17:35.811159 140059347068736 util.py:244] Unresolved object in checkpoint: (root).data._log_pi_a2s
+WARNING:tensorflow:A checkpoint was restored (e.g. tf.train.Checkpoint.restore or tf.keras.Model.load_weights) but not all checkpointed values were used. See above for specific issues. Use expect_partial() on the load status object, e.g. tf.train.Checkpoint.restore(...).expect_partial(), to silence these warnings, or use assert_consumed() to make the check explicit. See https://www.tensorflow.org/alpha/guide/checkpoints#loading_mechanics for details.
+W1203 00:17:35.811233 140059347068736 util.py:252] A checkpoint was restored (e.g. tf.train.Checkpoint.restore or tf.keras.Model.load_weights) but not all checkpointed values were used. See above for specific issues. Use expect_partial() on the load status object, e.g. tf.train.Checkpoint.restore(...).expect_partial(), to silence these warnings, or use assert_consumed() to make the check explicit. See https://www.tensorflow.org/alpha/guide/checkpoints#loading_mechanics for details.
