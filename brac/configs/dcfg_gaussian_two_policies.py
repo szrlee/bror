@@ -49,11 +49,11 @@ def get_data_config(env_name, policy_root_dir=None):
       env_name,
       'agent_partial_target')
 
-  p1_ours_eps = ['load', ckpt_file_ours, ['gaussian', 0.1], model_params]
-  p1_authors_eps = ['load', ckpt_file_authors, ['gaussian', 0.1], model_params]
+  p1_ours_gaussian = ['load', ckpt_file_ours, ['gaussian', 0.1], model_params]
+  p1_authors_gaussian = ['load', ckpt_file_authors, ['gaussian', 0.1], model_params]
 
   data_config = [
-      ['p1_ours_eps', p1_ours_eps, 1],
-      ['p1_authors_eps', p1_authors_eps, 1]
+      ['p1_ours_gaussian', p1_ours_gaussian, 1],
+      ['p1_authors_gaussian', p1_authors_gaussian, 1]
   ]
   return data_config
