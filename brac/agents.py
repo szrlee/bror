@@ -19,6 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 from behavior_regularized_offline_rl.brac import bc_agent
+from behavior_regularized_offline_rl.brac import bci_agent
 from behavior_regularized_offline_rl.brac import bcq_agent
 from behavior_regularized_offline_rl.brac import brac_dual_agent
 from behavior_regularized_offline_rl.brac import brac_primal_agent

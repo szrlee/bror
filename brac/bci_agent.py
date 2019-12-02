@@ -91,9 +91,11 @@ class Agent(agent.Agent):
     s = batch['s1']
     a_b = batch['a1']
     a_bs = batch['a1s']
-    print(s.shape)
-    print(a_b.shape)
-    print(a_bs.shape)
+    s_shape = tf.shape(s)
+    a_bs_shape = tf.shape(a_bs)
+    s = tf.tile(s, [1, a_bs_shape[1]])
+    s = tf.reshape(s, [-1, s_shape[1]])
+    a_b = tf.reshape(a_bs, [-1, a_bs_shape[2]])
     a_b = utils.clip_by_eps(a_b, self._action_spec, CLIP_EPS)
     log_pi_a_b = self._get_log_density(s, a_b)
     _, _, log_pi_a_p = self._p_fn(s)

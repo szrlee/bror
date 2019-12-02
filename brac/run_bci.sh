@@ -16,7 +16,7 @@
 python train_offline.py \
   --alsologtostderr --sub_dir=0 \
   --env_name=HalfCheetah-v2 \
-  --agent_name=bc \
+  --agent_name=bci \
   --data_name=pure_two_policies1 \
   --data_sub_dir=1 \
   --total_train_steps=300000 \
