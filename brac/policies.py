@@ -86,16 +86,11 @@ class MaxQSoftPolicy(tf.Module):
     states_ = tf.tile(observation[None], (self._n, 1, 1))
     states_ = tf.reshape(states_, [self._n * batch_size, -1])
     qvals = self._q_network(states_, actions_)
-    print(qvals)
     qvals = tf.reshape(qvals, [self._n, batch_size])
-    print(qvals)
     a_indices = tf.argmax(qvals, axis=0)
-    print(a_indices)
     gather_indices = tf.stack(
         [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
-    print(gather_indices)
     action = tf.gather_nd(actions, gather_indices)
-    print(action)
     return action, state
 
 
@@ -111,6 +106,10 @@ class ContinuousRandomPolicy(tf.Module):
         self._action_spec, outer_dims=[observation.shape[0]])
     return action, state
 
+  # TODO
+  @tf.function
+  def collect(self, observation, n_samples, state=()):
+    raise NotImplementedError
 
 class EpsilonGreedyRandomSoftPolicy(tf.Module):
   """Switches between samples from actor network and uniformly random action."""
@@ -129,6 +128,25 @@ class EpsilonGreedyRandomSoftPolicy(tf.Module):
     is_random = tf.less(seed, self._epsilon)
     action = tf.compat.v2.where(is_random, rand_action, action)
     return action, state
+
+  @tf.function
+  def collect(self, observation, n_samples, state=()):
+    batch_size = observation.shape[0]
+    actions, log_pi_as = self._a_network.sample_n(observation, n_samples)[1:]
+    ZEROS_matrix = tf.zeros([n_samples, batch_size], tf.int64)
+    a_indices = tf.argmax(ZEROS_matrix, axis=0)
+    gather_indices = tf.stack(
+        [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
+    action = tf.gather_nd(actions, gather_indices)
+    actions = tf.reshape(actions, [batch_size, 10, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    # epsilon greedy
+    rand_action = tensor_spec.sample_bounded_spec(
+        self._a_network.action_spec, outer_dims=[observation.shape[0]])
+    seed = tf.random.uniform([observation.shape[0]])
+    is_random = tf.less(seed, self._epsilon)
+    action = tf.compat.v2.where(is_random, rand_action, action)
+    return action, state, actions, log_pi_as
 
 
 class GaussianRandomSoftPolicy(tf.Module):
@@ -149,6 +167,25 @@ class GaussianRandomSoftPolicy(tf.Module):
     action = tf.clip_by_value(action, spec.minimum + self._clip_eps,
                               spec.maximum - self._clip_eps)
     return action, state
+
+  @tf.function
+  def collect(self, observation, n_samples, state=()):
+    batch_size = observation.shape[0]
+    actions, log_pi_as = self._a_network.sample_n(observation, n_samples)[1:]
+    ZEROS_matrix = tf.zeros([n_samples, batch_size], tf.int64)
+    a_indices = tf.argmax(ZEROS_matrix, axis=0)
+    gather_indices = tf.stack(
+        [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
+    action = tf.gather_nd(actions, gather_indices)
+    actions = tf.reshape(actions, [batch_size, 10, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    # add gaussian noise
+    noise = tf.random_normal(shape=action.shape, stddev=self._std)
+    action = action + noise
+    spec = self._a_network.action_spec
+    action = tf.clip_by_value(action, spec.minimum + self._clip_eps,
+                              spec.maximum - self._clip_eps)
+    return action, state, actions, log_pi_as
 
 
 class GaussianEpsilonGreedySoftPolicy(tf.Module):
@@ -175,6 +212,30 @@ class GaussianEpsilonGreedySoftPolicy(tf.Module):
     is_random = tf.less(seed, self._eps)
     action = tf.compat.v2.where(is_random, rand_action, action)
     return action, state
+
+  @tf.function
+  def collect(self, observation, n_samples, state=()):
+    batch_size = observation.shape[0]
+    actions, log_pi_as = self._a_network.sample_n(observation, n_samples)[1:]
+    ZEROS_matrix = tf.zeros([n_samples, batch_size], tf.int64)
+    a_indices = tf.argmax(ZEROS_matrix, axis=0)
+    gather_indices = tf.stack(
+        [a_indices, tf.range(batch_size, dtype=tf.int64)], axis=-1)
+    action = tf.gather_nd(actions, gather_indices)
+    actions = tf.reshape(actions, [batch_size, 10, -1])
+    log_pi_as = tf.reshape(log_pi_as, [batch_size, 10])
+    # add gaussian noise and epsilon greedy
+    noise = tf.random_normal(shape=action.shape, stddev=self._std)
+    action = action + noise
+    spec = self._a_network.action_spec
+    action = tf.clip_by_value(action, spec.minimum + self._clip_eps,
+                              spec.maximum - self._clip_eps)
+    rand_action = tensor_spec.sample_bounded_spec(
+        self._a_network.action_spec, outer_dims=[observation.shape[0]])
+    seed = tf.random.uniform([observation.shape[0]])
+    is_random = tf.less(seed, self._eps)
+    action = tf.compat.v2.where(is_random, rand_action, action)
+    return action, state, actions, log_pi_as
 
 
 class BCQPolicy(tf.Module):
