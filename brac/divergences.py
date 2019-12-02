@@ -147,6 +147,15 @@ class MMD(Divergence):
     abn = b_fn.sample_n(s, n_samples)[1]
     return mmd(apn, abn, kernel)
 
+  def primal_estimate_internal(
+      self, s, p_fn, abn, abn_logb, n_samples,
+      kernel=laplacian_kernel, action_spec=None):
+    batch_size = s.shape[0]
+    abn = tf.reshape(abn, [n_samples, batch_size, -1])
+    apn = p_fn.sample_n(s, n_samples)[1]
+    return mmd(apn, abn, kernel)
+
+
 
 CLS_DICT = dict(
     kl=KL,
