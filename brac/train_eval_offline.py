@@ -75,7 +75,7 @@ def train_eval_offline(
   logging.info('Loading data from %s ...', data_file)
   data_size = utils.load_variable_from_ckpt(data_file, 'data._capacity')
   with tf.device('/cpu:0'):
-    full_data = dataset.Dataset(observation_spec, action_spec, data_size)
+    full_data = dataset.DatasetWithInternalActions(observation_spec, action_spec, data_size)
   data_ckpt = tf.train.Checkpoint(data=full_data)
   data_ckpt.restore(data_file)
   # Split data.
