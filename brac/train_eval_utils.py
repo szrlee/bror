@@ -61,8 +61,8 @@ def env_factory(env_name):
     return tf_env
 
 
-def get_transition(time_step, next_time_step, action, next_action, internal_actions, internal_log_probs_actions, next_internal_actions, next_internal_log_probs_actions):
-    return dataset.Transition(
+def get_transition_with_internal_actions(time_step, next_time_step, action, next_action, internal_actions, internal_log_probs_actions, next_internal_actions, next_internal_log_probs_actions):
+    return dataset.TransitionWithInternalActions(
         s1=time_step.observation,
         s2=next_time_step.observation,
         a1=action,
@@ -75,8 +75,17 @@ def get_transition(time_step, next_time_step, action, next_action, internal_acti
         log_pi_a2s=next_internal_log_probs_actions
         )
 
+def get_transition(time_step, next_time_step, action, next_action):
+    return dataset.Transition(
+        s1=time_step.observation,
+        s2=next_time_step.observation,
+        a1=action,
+        a2=next_action,
+        reward=next_time_step.reward,
+        discount=next_time_step.discount
+        )
 
-class DataCollector(object):
+class DataCollectorWithInternalActions(object):
     """Class for collecting sequence of environment experience."""
 
     def __init__(self, tf_env, policy, data):
@@ -101,10 +110,36 @@ class DataCollector(object):
         self._saved_internal_actions = next_internal_actions
         self._saved_internal_log_probs_actions = next_internal_log_probs_actions
         if not time_step.is_last()[0].numpy():
-            transition = get_transition(time_step, next_time_step,
+            transition = get_transition_with_internal_actions(time_step, next_time_step,
                                         action, next_action,
                                         internal_actions, internal_log_probs_actions,
                                         next_internal_actions, next_internal_log_probs_actions)
+            self._data.add_transitions(transition)
+            return 1
+        else:
+            return 0
+
+class DataCollector(object):
+    """Class for collecting sequence of environment experience."""
+
+    def __init__(self, tf_env, policy, data):
+        self._tf_env = tf_env
+        self._policy = policy
+        self._data = data
+        self._saved_action = None
+
+    def collect_transition(self):
+        """Collect single transition from environment."""
+        time_step = self._tf_env.current_time_step()
+        if self._saved_action is None:
+            self._saved_action, = self._policy.collect(time_step.observation)[0]
+        action = self._saved_action
+        next_time_step = self._tf_env.step(action)
+        next_action = self._policy.collect(next_time_step.observation)[0]
+        self._saved_action = next_action
+        if not time_step.is_last()[0].numpy():
+            transition = get_transition(time_step, next_time_step,
+                                        action, next_action)
             self._data.add_transitions(transition)
             return 1
         else:

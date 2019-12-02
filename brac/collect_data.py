@@ -81,7 +81,7 @@ def get_sample_counts(n, distr):
 
 def collect_n_transitions(tf_env, policy, data, n, log_freq=10000):
   """Adds desired number of transitions to dataset."""
-  collector = train_eval_utils.DataCollector(tf_env, policy, data)
+  collector = train_eval_utils.DataCollectorWithInternalActions(tf_env, policy, data)
   time_st = time.time()
   timed_at_step = 0
   steps_collected = 0
@@ -115,7 +115,7 @@ def collect_data(
   sample_sizes = list([cfg[-1] for cfg in data_config])
   sample_sizes = get_sample_counts(n_samples, sample_sizes)
   with tf.device('/cpu:0'):
-    data = dataset.Dataset(
+    data = dataset.DatasetWithInternalActions(
         observation_spec,
         action_spec,
         n_samples,

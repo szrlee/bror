@@ -24,8 +24,11 @@ import numpy as np
 import tensorflow as tf
 
 
-Transition = collections.namedtuple(
+TransitionWithInternalActions = collections.namedtuple(
     'Transition', 's1, s2, a1, a2, discount, reward, a1s, log_pi_a1s, a2s, log_pi_a2s')
+
+Transition = collections.namedtuple(
+    'Transition', 's1, s2, a1, a2, discount, reward')
 
 
 class DatasetView(object):
@@ -57,7 +60,7 @@ def save_copy(data, ckpt_name):
   data_ckpt.write(ckpt_name)
 
 
-class Dataset(tf.Module):
+class DatasetWithInternalActions(tf.Module):
   """Tensorflow module of dataset of transitions."""
 
   def __init__(
@@ -87,11 +90,98 @@ class Dataset(tf.Module):
     self._a2s = self._zeros([size, 10] + action_shape, action_type)
     self._log_pi_a2s = self._zeros([size, 10], tf.float32)
 
-    self._data = Transition(
+    self._data = TransitionWithInternalActions(
         s1=self._s1, s2=self._s2, a1=self._a1, a2=self._a2,
         discount=self._discount, reward=self._reward,
         a1s = self._a1s, log_pi_a1s = self._log_pi_a1s,
         a2s = self._a2s, log_pi_a2s = self._log_pi_a2s)
+    self._current_size = tf.Variable(0)
+    self._current_idx = tf.Variable(0)
+    self._capacity = tf.Variable(self._size)
+    self._config = collections.OrderedDict(
+        observation_spec=observation_spec,
+        action_spec=action_spec,
+        size=size,
+        circular=circular)
+
+  @property
+  def config(self):
+    return self._config
+
+  def create_view(self, indices):
+    return DatasetView(self, indices)
+
+  def get_batch(self, indices):
+    indices = tf.constant(indices)
+    def get_batch_(data_):
+      return tf.gather(data_, indices)
+    transition_batch = tf.nest.map_structure(get_batch_, self._data)
+    return transition_batch
+
+  @property
+  def data(self):
+    return self._data
+
+  @property
+  def capacity(self):
+    return self._size
+
+  @property
+  def size(self):
+    return self._current_size.numpy()
+
+  def _zeros(self, shape, dtype):
+    """Create a variable initialized with zeros."""
+    return tf.Variable(tf.zeros(shape, dtype))
+
+  @tf.function
+  def add_transitions(self, transitions):
+    assert isinstance(transitions, Transition)
+    batch_size = transitions.s1.shape[0]
+    effective_batch_size = tf.minimum(
+        batch_size, self._size - self._current_idx)
+    indices = self._current_idx + tf.range(effective_batch_size)
+    for key in transitions._asdict().keys():
+      data = getattr(self._data, key)
+      batch = getattr(transitions, key)
+      tf.scatter_update(data, indices, batch[:effective_batch_size])
+    # Update size and index.
+    if tf.less(self._current_size, self._size):
+      self._current_size.assign_add(effective_batch_size)
+    self._current_idx.assign_add(effective_batch_size)
+    if self._circular:
+      if tf.greater_equal(self._current_idx, self._size):
+        self._current_idx.assign(0)
+
+
+class Dataset(tf.Module):
+  """Tensorflow module of dataset of transitions."""
+
+  def __init__(
+      self,
+      observation_spec,
+      action_spec,
+      size,
+      circular=True,
+      ):
+    super(Dataset, self).__init__()
+    self._size = size
+    self._circular = circular
+    obs_shape = list(observation_spec.shape)
+    obs_type = observation_spec.dtype
+    action_shape = list(action_spec.shape)
+    print("action_shape: {}".format(action_shape))
+    action_type = action_spec.dtype
+    self._s1 = self._zeros([size] + obs_shape, obs_type)
+    self._s2 = self._zeros([size] + obs_shape, obs_type)
+    self._a1 = self._zeros([size] + action_shape, action_type)
+    self._a2 = self._zeros([size] + action_shape, action_type)
+    self._discount = self._zeros([size], tf.float32)
+    self._reward = self._zeros([size], tf.float32)
+   
+    self._data = Transition(
+        s1=self._s1, s2=self._s2, a1=self._a1, a2=self._a2,
+        discount=self._discount, reward=self._reward)
     self._current_size = tf.Variable(0)
     self._current_idx = tf.Variable(0)
     self._capacity = tf.Variable(self._size)
