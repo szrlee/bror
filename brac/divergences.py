@@ -158,7 +158,7 @@ class MMD(Divergence):
 
 ##### Stein Discrepency #####
 
-def rbf_kernel(x, dim=X_dim, h=1.):
+def rbf_kernel(x, dim, h=1.):
     # Reference 1: https://github.com/ChunyuanLI/SVGD/blob/master/demo_svgd.ipynb
     # Reference 2: https://github.com/yc14600/svgd/blob/master/svgd.py
     XY = tf.matmul(x, tf.transpose(x))
@@ -176,7 +176,7 @@ def rbf_kernel(x, dim=X_dim, h=1.):
     return kxy, dxkxy, dxykxy_tr
 
 
-def imq_kernel(x, dim=X_dim, beta=-.5, c=1.):
+def imq_kernel(x, dim, beta=-.5, c=1.):
     XY = tf.matmul(x, tf.transpose(x))
     X2_ = tf.reshape(tf.reduce_sum(tf.square(x), axis=1), shape=[tf.shape(x)[0], 1])
     X2 = tf.tile(X2_, [1, tf.shape(x)[0]])
@@ -211,10 +211,13 @@ class Stein(Divergence):
       self, s, p_fn, b_fn, n_samples,
       kernel=rbf_kernel, action_spec=None):
     abn = b_fn.sample_n(s, n_samples)[1]
-    abn_logp = p_fn.get_log_density(
+    with tf.GradientTape(watch_accessed_variables=False) as tape:
+      tape.watch(abn)
+      abn_logp = p_fn.get_log_density(
         s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
-    sp = tf.gradients(abn_logp, abn)[0]
+    sp = tape.gradient(abn_logp, abn)
     tf.print(abn.shape)
+    tf.print(abn_logp.shape)
     tf.print(sp.shape)
     return stein(sp, abn, kernel, dim=abn.shape[2])
 
@@ -223,9 +226,14 @@ class Stein(Divergence):
       kernel=rbf_kernel, action_spec=None):
     batch_size = s.shape[0]
     abn = tf.reshape(abn, [n_samples, batch_size, -1])
-    abn_logp = p_fn.get_log_density(
+    with tf.GradientTape(watch_accessed_variables=False) as tape:
+      tape.watch(abn)
+      abn_logp = p_fn.get_log_density(
         s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
-    sp = tf.gradients(abn_logp, abn)[0] #[mb, X_dim]
+    sp = tape.gradient(abn_logp, abn)
+    tf.print(abn.shape)
+    tf.print(abn_logp.shape)
+    tf.print(sp.shape)
     return stein(sp, abn, kernel, dim=abn.shape[2])
 
 
