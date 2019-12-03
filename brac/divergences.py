@@ -156,11 +156,84 @@ class MMD(Divergence):
     return mmd(apn, abn, kernel)
 
 
+##### Stein Discrepency #####
+
+def rbf_kernel(x, dim=X_dim, h=1.):
+    # Reference 1: https://github.com/ChunyuanLI/SVGD/blob/master/demo_svgd.ipynb
+    # Reference 2: https://github.com/yc14600/svgd/blob/master/svgd.py
+    XY = tf.matmul(x, tf.transpose(x))
+    X2_ = tf.reshape(tf.reduce_sum(tf.square(x), axis=1), shape=[tf.shape(x)[0], 1])
+    X2 = tf.tile(X2_, [1, tf.shape(x)[0]])
+    pdist = tf.subtract(tf.add(X2, tf.transpose(X2)), 2 * XY)  # pairwise distance matrix
+
+    kxy = tf.exp(- pdist / h ** 2 / 2.0)  # kernel matrix
+
+    sum_kxy = tf.expand_dims(tf.reduce_sum(kxy, axis=1), 1)
+    dxkxy = tf.add(-tf.matmul(kxy, x), tf.multiply(x, sum_kxy)) / (h ** 2)  # sum_y dk(x, y)/dx
+
+    dxykxy_tr = tf.multiply((dim * (h**2) - pdist), kxy) / (h**4)  # tr( dk(x, y)/dxdy )
+
+    return kxy, dxkxy, dxykxy_tr
+
+
+def imq_kernel(x, dim=X_dim, beta=-.5, c=1.):
+    XY = tf.matmul(x, tf.transpose(x))
+    X2_ = tf.reshape(tf.reduce_sum(tf.square(x), axis=1), shape=[tf.shape(x)[0], 1])
+    X2 = tf.tile(X2_, [1, tf.shape(x)[0]])
+    pdist = tf.subtract(tf.add(X2, tf.transpose(X2)), 2 * XY)  # pairwise distance matrix
+
+    kxy = (c + pdist) ** beta
+
+    coeff = 2 * beta * (c + pdist) ** (beta-1)
+    dxkxy = tf.matmul(coeff, x) - tf.multiply(x, tf.expand_dims(tf.reduce_sum(coeff, axis=1), 1))
+
+    dxykxy_tr = tf.multiply((c + pdist) ** (beta - 2),
+                            - 2 * dim * c * beta + (- 4 * beta ** 2 + (4 - 2 * dim) * beta) * pdist)
+
+    return kxy, dxkxy, dxykxy_tr
+
+@gin.configurable
+def stein(sp, x, Kernel, dim):
+    kxy, dxkxy, dxykxy_tr = Kernel(x, dim)
+    tf.print(kxy.shape)
+    t13 = tf.multiply(tf.matmul(sp, tf.transpose(sp)), kxy) + dxykxy_tr
+    t2 = 2 * tf.trace(tf.matmul(sp, tf.transpose(dxkxy)))
+    n = tf.cast(tf.shape(x)[0], tf.float32)
+
+    ksd = (tf.reduce_sum(t13) + t2) / (n ** 2)
+
+    return ksd
+
+class Stein(Divergence):
+  """Stein discrepancy."""
+
+  def primal_estimate(
+      self, s, p_fn, b_fn, n_samples,
+      kernel=rbf_kernel, action_spec=None):
+    abn = b_fn.sample_n(s, n_samples)[1]
+    abn_logp = p_fn.get_log_density(
+        s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
+    sp = tf.gradients(abn_logp, abn)[0]
+    tf.print(abn.shape)
+    tf.print(sp.shape)
+    return stein(sp, abn, kernel, dim=abn.shape[2])
+
+  def primal_estimate_internal(
+      self, s, p_fn, abn, abn_logb, n_samples,
+      kernel=rbf_kernel, action_spec=None):
+    batch_size = s.shape[0]
+    abn = tf.reshape(abn, [n_samples, batch_size, -1])
+    abn_logp = p_fn.get_log_density(
+        s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
+    sp = tf.gradients(abn_logp, abn)[0] #[mb, X_dim]
+    return stein(sp, abn, kernel, dim=abn.shape[2])
+
 
 CLS_DICT = dict(
     kl=KL,
     w=W,
     mmd=MMD,
+    stein=Stein,
     )
 
 
