@@ -161,17 +161,21 @@ class MMD(Divergence):
 def rbf_kernel(x, dim, h=1.):
     # Reference 1: https://github.com/ChunyuanLI/SVGD/blob/master/demo_svgd.ipynb
     # Reference 2: https://github.com/yc14600/svgd/blob/master/svgd.py
-    XY = tf.matmul(x, tf.transpose(x))
-    X2_ = tf.reshape(tf.reduce_sum(tf.square(x), axis=1), shape=[tf.shape(x)[0], 1])
-    X2 = tf.tile(X2_, [1, tf.shape(x)[0]])
-    pdist = tf.subtract(tf.add(X2, tf.transpose(X2)), 2 * XY)  # pairwise distance matrix
-
+    pdist = tf.reduce_sum(
+      tf.square(x[None] - x[:, None]), axis=-1)
+    #XY = tf.matmul(x, tf.transpose(x))
+    #X2_ = tf.reshape(tf.reduce_sum(tf.square(x), axis=1), shape=[tf.shape(x)[0], 1])
+    #X2 = tf.tile(X2_, [1, tf.shape(x)[0]])
+    #pdist = tf.subtract(tf.add(X2, tf.transpose(X2)), 2 * XY)  # pairwise distance matrix
     kxy = tf.exp(- pdist / h ** 2 / 2.0)  # kernel matrix
 
     sum_kxy = tf.expand_dims(tf.reduce_sum(kxy, axis=1), 1)
-    dxkxy = tf.add(-tf.matmul(kxy, x), tf.multiply(x, sum_kxy)) / (h ** 2)  # sum_y dk(x, y)/dx
+    x = tf.reshape(x, [-1,dim,x.shape[1]])
+    dxkxy = tf.add(-tf.einsum('ija,jka->ika', kxy, x), tf.multiply(x, sum_kxy)) / (h ** 2)  # sum_y dk(x, y)/dx
+    tf.print("dxkxy.shape: {}".format(dxkxy.shape))
 
     dxykxy_tr = tf.multiply((dim * (h**2) - pdist), kxy) / (h**4)  # tr( dk(x, y)/dxdy )
+    tf.print("dxy_kxy_tr.shape: {}".format(dxykxy_tr.shape))
 
     return kxy, dxkxy, dxykxy_tr
 
@@ -195,12 +199,17 @@ def imq_kernel(x, dim, beta=-.5, c=1.):
 @gin.configurable
 def stein(sp, x, Kernel, dim):
     kxy, dxkxy, dxykxy_tr = Kernel(x, dim)
-    tf.print(kxy.shape)
-    t13 = tf.multiply(tf.matmul(sp, tf.transpose(sp)), kxy) + dxykxy_tr
-    t2 = 2 * tf.trace(tf.matmul(sp, tf.transpose(dxkxy)))
+    tf.print(x.shape)
+    sp = tf.reshape(sp, [sp.shape[0],dim,-1])
+    tf.print(sp.shape)
+    t13 = tf.multiply(tf.einsum("ija,kja->ika", sp, sp), kxy) + dxykxy_tr
+    tf.print(t13.shape)
+    t2_before_tr = tf.einsum("ija,kja->ika", sp, dxkxy)
+    tf.print(t2_before_tr.shape)
+    t2 = 2 * tf.trace(tf.reshape(t2_before_tr, [t2_before_tr.shape[2], t2_before_tr.shape[1], -1]))
     n = tf.cast(tf.shape(x)[0], tf.float32)
-
-    ksd = (tf.reduce_sum(t13) + t2) / (n ** 2)
+    tf.print(t2.shape)
+    ksd = (tf.reduce_sum(t13, [0,1]) + t2) / (n ** 2)
 
     return ksd
 
