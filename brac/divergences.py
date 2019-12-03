@@ -172,10 +172,10 @@ def rbf_kernel(x, dim, h=1.):
     sum_kxy = tf.expand_dims(tf.reduce_sum(kxy, axis=1), 1)
     x = tf.reshape(x, [-1,dim,x.shape[1]])
     dxkxy = tf.add(-tf.einsum('ija,jka->ika', kxy, x), tf.multiply(x, sum_kxy)) / (h ** 2)  # sum_y dk(x, y)/dx
-    tf.print("dxkxy.shape: {}".format(dxkxy.shape))
+    #tf.print("dxkxy.shape: {}".format(dxkxy.shape))
 
     dxykxy_tr = tf.multiply((dim * (h**2) - pdist), kxy) / (h**4)  # tr( dk(x, y)/dxdy )
-    tf.print("dxy_kxy_tr.shape: {}".format(dxykxy_tr.shape))
+    #tf.print("dxy_kxy_tr.shape: {}".format(dxykxy_tr.shape))
 
     return kxy, dxkxy, dxykxy_tr
 
@@ -199,16 +199,16 @@ def imq_kernel(x, dim, beta=-.5, c=1.):
 @gin.configurable
 def stein(sp, x, Kernel, dim):
     kxy, dxkxy, dxykxy_tr = Kernel(x, dim)
-    tf.print(x.shape)
+    # tf.print(x.shape)
     sp = tf.reshape(sp, [sp.shape[0],dim,-1])
-    tf.print(sp.shape)
+    # tf.print(sp.shape)
     t13 = tf.multiply(tf.einsum("ija,kja->ika", sp, sp), kxy) + dxykxy_tr
-    tf.print(t13.shape)
+    # tf.print(t13.shape)
     t2_before_tr = tf.einsum("ija,kja->ika", sp, dxkxy)
-    tf.print(t2_before_tr.shape)
+    # tf.print(t2_before_tr.shape)
     t2 = 2 * tf.trace(tf.reshape(t2_before_tr, [t2_before_tr.shape[2], t2_before_tr.shape[1], -1]))
     n = tf.cast(tf.shape(x)[0], tf.float32)
-    tf.print(t2.shape)
+    # tf.print(t2.shape)
     ksd = (tf.reduce_sum(t13, [0,1]) + t2) / (n ** 2)
 
     return ksd
@@ -225,9 +225,6 @@ class Stein(Divergence):
       abn_logp = p_fn.get_log_density(
         s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
     sp = tape.gradient(abn_logp, abn)
-    tf.print(abn.shape)
-    tf.print(abn_logp.shape)
-    tf.print(sp.shape)
     return stein(sp, abn, kernel, dim=abn.shape[2])
 
   def primal_estimate_internal(
@@ -240,9 +237,6 @@ class Stein(Divergence):
       abn_logp = p_fn.get_log_density(
         s, utils.clip_by_eps(abn, action_spec, CLIP_EPS))
     sp = tape.gradient(abn_logp, abn)
-    tf.print(abn.shape)
-    tf.print(abn_logp.shape)
-    tf.print(sp.shape)
     return stein(sp, abn, kernel, dim=abn.shape[2])
 
 
